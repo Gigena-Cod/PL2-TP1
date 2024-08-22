@@ -35,14 +35,14 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewExpenses = new DataGridView();
             ColumnMonth = new DataGridViewTextBoxColumn();
             ColumnAmount = new DataGridViewTextBoxColumn();
             button3 = new Button();
             button2 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewExpenses).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -104,7 +104,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
+            groupBox2.Controls.Add(dataGridViewExpenses);
             groupBox2.Controls.Add(button3);
             groupBox2.Controls.Add(button2);
             groupBox2.Location = new Point(12, 177);
@@ -114,14 +114,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Listado de gastos";
             // 
-            // dataGridView1
+            // dataGridViewExpenses
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnMonth, ColumnAmount });
-            dataGridView1.Location = new Point(15, 22);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(255, 184);
-            dataGridView1.TabIndex = 7;
+            dataGridViewExpenses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewExpenses.Columns.AddRange(new DataGridViewColumn[] { ColumnMonth, ColumnAmount });
+            dataGridViewExpenses.Location = new Point(15, 22);
+            dataGridViewExpenses.Name = "dataGridViewExpenses";
+            dataGridViewExpenses.Size = new Size(255, 184);
+            dataGridViewExpenses.TabIndex = 7;
             // 
             // ColumnMonth
             // 
@@ -164,7 +164,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewExpenses).EndInit();
             ResumeLayout(false);
         }
 
@@ -177,7 +177,7 @@
         private TextBox textBoxAmount;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewExpenses;
         private DataGridViewTextBoxColumn ColumnMonth;
         private DataGridViewTextBoxColumn ColumnAmount;
         private Button button3;

@@ -22,6 +22,11 @@ namespace Dos_Vectores
 
             comboBoxAmount.SelectedIndex = 0;
 
+            for (int index = 0; index < 12; index++)
+            {
+                dataGridViewExpenses.Rows.Add(months[index],amounts[index]);
+            }
+
         }
 
         private void saveAmount_Click(object sender, EventArgs e)
@@ -40,10 +45,10 @@ namespace Dos_Vectores
                 return;
             }
 
-            // Actualiza el monto correspondiente al mes seleccionado
             amounts[comboBoxAmount.SelectedIndex] += amount;
 
-            // Opción para notificar al usuario que el monto se ha guardado exitosamente (opcional)
+            textBoxAmount.Clear();
+
             MessageBox.Show("El monto ha sido guardado exitosamente.", "Monto guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
