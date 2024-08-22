@@ -60,7 +60,7 @@ namespace Vectores
             Int32 index = 0;
             Int32 totalPlayers = Players.Length;
 
-            while (index< totalPlayers)
+            while (Players[index] != null && index < totalPlayers)
             {
                 listPlayers.Items.Add(Players[index]);
                 index++;
