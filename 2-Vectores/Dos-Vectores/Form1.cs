@@ -57,6 +57,13 @@ namespace Dos_Vectores
             ProcedureListExpensesUsingFor();
         }
 
+       
+
+        private void buttonListWithWhile_Click(object sender, EventArgs e)
+        {
+            ProcedureListExpensesUsingWhile();
+        }
+
         private void ProcedureListExpensesUsingFor()
         {
             dataGridViewExpenses.Rows.Clear();
@@ -68,8 +75,6 @@ namespace Dos_Vectores
 
         }
 
-
-
         private void ProcedureListExpensesUsingWhile()
         {
             dataGridViewExpenses.Rows.Clear();
@@ -80,11 +85,6 @@ namespace Dos_Vectores
                 dataGridViewExpenses.Rows.Add(months[index], amounts[index]);
                 index++;
             }
-        }
-
-        private void buttonListWithWhile_Click(object sender, EventArgs e)
-        {
-            ProcedureListExpensesUsingWhile();
         }
     }
 }
