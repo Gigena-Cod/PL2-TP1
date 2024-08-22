@@ -8,6 +8,7 @@ namespace Dos_Vectores
         }
 
         String[] months = new String[12] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+
         Decimal[] amounts = new Decimal[12] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         private void expenseManager_Load(object sender, EventArgs e)
@@ -22,5 +23,29 @@ namespace Dos_Vectores
             comboBoxAmount.SelectedIndex = 0;
 
         }
+
+        private void saveAmount_Click(object sender, EventArgs e)
+        {
+            // Verifica si se ha seleccionado un mes
+            if (comboBoxAmount.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un mes de la lista.", "Selección de mes requerida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Verifica si se ha ingresado un monto válido
+            if (string.IsNullOrEmpty(textBoxAmount.Text) || !int.TryParse(textBoxAmount.Text, out int amount) || amount <= 0)
+            {
+                MessageBox.Show("Por favor, ingresa un monto válido mayor a cero.", "Monto inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Actualiza el monto correspondiente al mes seleccionado
+            amounts[comboBoxAmount.SelectedIndex] += amount;
+
+            // Opción para notificar al usuario que el monto se ha guardado exitosamente (opcional)
+            MessageBox.Show("El monto ha sido guardado exitosamente.", "Monto guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }

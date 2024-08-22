@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            saveAmount = new Button();
             comboBoxAmount = new ComboBox();
-            textBox1 = new TextBox();
+            textBoxAmount = new TextBox();
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
@@ -47,9 +47,9 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(saveAmount);
             groupBox1.Controls.Add(comboBoxAmount);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxAmount);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
@@ -59,14 +59,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cargar gasto";
             // 
-            // button1
+            // saveAmount
             // 
-            button1.Location = new Point(185, 99);
-            button1.Name = "button1";
-            button1.Size = new Size(84, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            saveAmount.Location = new Point(185, 99);
+            saveAmount.Name = "saveAmount";
+            saveAmount.Size = new Size(84, 29);
+            saveAmount.TabIndex = 4;
+            saveAmount.Text = "Guardar";
+            saveAmount.UseVisualStyleBackColor = true;
+            saveAmount.Click += saveAmount_Click;
             // 
             // comboBoxAmount
             // 
@@ -76,12 +77,12 @@
             comboBoxAmount.Size = new Size(197, 23);
             comboBoxAmount.TabIndex = 3;
             // 
-            // textBox1
+            // textBoxAmount
             // 
-            textBox1.Location = new Point(72, 61);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 23);
-            textBox1.TabIndex = 2;
+            textBoxAmount.Location = new Point(72, 61);
+            textBoxAmount.Name = "textBoxAmount";
+            textBoxAmount.Size = new Size(197, 23);
+            textBoxAmount.TabIndex = 2;
             // 
             // label2
             // 
@@ -171,9 +172,9 @@
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Button button1;
+        private Button saveAmount;
         private ComboBox comboBoxAmount;
-        private TextBox textBox1;
+        private TextBox textBoxAmount;
         private Label label2;
         private Label label1;
         private DataGridView dataGridView1;
