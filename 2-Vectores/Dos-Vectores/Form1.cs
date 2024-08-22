@@ -24,7 +24,7 @@ namespace Dos_Vectores
 
             for (int index = 0; index < 12; index++)
             {
-                dataGridViewExpenses.Rows.Add(months[index],amounts[index]);
+                dataGridViewExpenses.Rows.Add(months[index], amounts[index]);
             }
 
         }
@@ -52,5 +52,39 @@ namespace Dos_Vectores
             MessageBox.Show("El monto ha sido guardado exitosamente.", "Monto guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void buttonListWithFor_Click(object sender, EventArgs e)
+        {
+            ProcedureListExpensesUsingFor();
+        }
+
+        private void ProcedureListExpensesUsingFor()
+        {
+            dataGridViewExpenses.Rows.Clear();
+
+            for (int index = 0; index < 12; index++)
+            {
+                dataGridViewExpenses.Rows.Add(months[index], amounts[index]);
+            }
+
+        }
+
+
+
+        private void ProcedureListExpensesUsingWhile()
+        {
+            dataGridViewExpenses.Rows.Clear();
+            int index = 0;
+
+            while (index < 12)
+            {
+                dataGridViewExpenses.Rows.Add(months[index], amounts[index]);
+                index++;
+            }
+        }
+
+        private void buttonListWithWhile_Click(object sender, EventArgs e)
+        {
+            ProcedureListExpensesUsingWhile();
+        }
     }
 }

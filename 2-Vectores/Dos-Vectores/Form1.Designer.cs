@@ -38,8 +38,8 @@
             dataGridViewExpenses = new DataGridView();
             ColumnMonth = new DataGridViewTextBoxColumn();
             ColumnAmount = new DataGridViewTextBoxColumn();
-            button3 = new Button();
-            button2 = new Button();
+            buttonListWithWhile = new Button();
+            buttonListWithFor = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewExpenses).BeginInit();
@@ -54,14 +54,14 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(285, 145);
+            groupBox1.Size = new Size(323, 145);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cargar gasto";
             // 
             // saveAmount
             // 
-            saveAmount.Location = new Point(185, 99);
+            saveAmount.Location = new Point(225, 101);
             saveAmount.Name = "saveAmount";
             saveAmount.Size = new Size(84, 29);
             saveAmount.TabIndex = 4;
@@ -74,14 +74,14 @@
             comboBoxAmount.FormattingEnabled = true;
             comboBoxAmount.Location = new Point(72, 27);
             comboBoxAmount.Name = "comboBoxAmount";
-            comboBoxAmount.Size = new Size(197, 23);
+            comboBoxAmount.Size = new Size(237, 23);
             comboBoxAmount.TabIndex = 3;
             // 
             // textBoxAmount
             // 
             textBoxAmount.Location = new Point(72, 61);
             textBoxAmount.Name = "textBoxAmount";
-            textBoxAmount.Size = new Size(197, 23);
+            textBoxAmount.Size = new Size(237, 23);
             textBoxAmount.TabIndex = 2;
             // 
             // label2
@@ -105,11 +105,11 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dataGridViewExpenses);
-            groupBox2.Controls.Add(button3);
-            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(buttonListWithWhile);
+            groupBox2.Controls.Add(buttonListWithFor);
             groupBox2.Location = new Point(12, 177);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(285, 267);
+            groupBox2.Size = new Size(323, 267);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Listado de gastos";
@@ -120,7 +120,7 @@
             dataGridViewExpenses.Columns.AddRange(new DataGridViewColumn[] { ColumnMonth, ColumnAmount });
             dataGridViewExpenses.Location = new Point(15, 22);
             dataGridViewExpenses.Name = "dataGridViewExpenses";
-            dataGridViewExpenses.Size = new Size(255, 184);
+            dataGridViewExpenses.Size = new Size(294, 184);
             dataGridViewExpenses.TabIndex = 7;
             // 
             // ColumnMonth
@@ -133,29 +133,31 @@
             ColumnAmount.HeaderText = "Importe";
             ColumnAmount.Name = "ColumnAmount";
             // 
-            // button3
+            // buttonListWithWhile
             // 
-            button3.Location = new Point(167, 222);
-            button3.Name = "button3";
-            button3.Size = new Size(102, 29);
-            button3.TabIndex = 6;
-            button3.Text = "Listar con while";
-            button3.UseVisualStyleBackColor = true;
+            buttonListWithWhile.Location = new Point(207, 222);
+            buttonListWithWhile.Name = "buttonListWithWhile";
+            buttonListWithWhile.Size = new Size(102, 29);
+            buttonListWithWhile.TabIndex = 6;
+            buttonListWithWhile.Text = "Listar con while";
+            buttonListWithWhile.UseVisualStyleBackColor = true;
+            buttonListWithWhile.Click += buttonListWithWhile_Click;
             // 
-            // button2
+            // buttonListWithFor
             // 
-            button2.Location = new Point(15, 222);
-            button2.Name = "button2";
-            button2.Size = new Size(102, 29);
-            button2.TabIndex = 5;
-            button2.Text = "Listar con for";
-            button2.UseVisualStyleBackColor = true;
+            buttonListWithFor.Location = new Point(89, 222);
+            buttonListWithFor.Name = "buttonListWithFor";
+            buttonListWithFor.Size = new Size(102, 29);
+            buttonListWithFor.TabIndex = 5;
+            buttonListWithFor.Text = "Listar con for";
+            buttonListWithFor.UseVisualStyleBackColor = true;
+            buttonListWithFor.Click += buttonListWithFor_Click;
             // 
             // expenseManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(309, 456);
+            ClientSize = new Size(347, 456);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "expenseManager";
@@ -180,7 +182,7 @@
         private DataGridView dataGridViewExpenses;
         private DataGridViewTextBoxColumn ColumnMonth;
         private DataGridViewTextBoxColumn ColumnAmount;
-        private Button button3;
-        private Button button2;
+        private Button buttonListWithWhile;
+        private Button buttonListWithFor;
     }
 }
