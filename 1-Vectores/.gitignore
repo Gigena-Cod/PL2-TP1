@@ -11,6 +11,9 @@
 bin/
 obj/
 out/
+Vectores/bin/
+Vectores/obj/
+Vectores/out/
 
 # User-specific files
 *.rsuser
