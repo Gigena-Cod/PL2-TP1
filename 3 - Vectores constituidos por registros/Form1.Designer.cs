@@ -93,6 +93,7 @@
             textBoxLimitCredit.Name = "textBoxLimitCredit";
             textBoxLimitCredit.Size = new Size(155, 23);
             textBoxLimitCredit.TabIndex = 6;
+            textBoxLimitCredit.TextChanged += textBoxLimitCredit_TextChanged;
             // 
             // label3
             // 
@@ -109,6 +110,7 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(155, 23);
             textBoxName.TabIndex = 4;
+            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
             // label2
             // 
@@ -125,6 +127,7 @@
             textBoxDebt.Name = "textBoxDebt";
             textBoxDebt.Size = new Size(136, 23);
             textBoxDebt.TabIndex = 2;
+            textBoxDebt.TextChanged += textBoxDebt_TextChanged;
             // 
             // label1
             // 
@@ -141,6 +144,7 @@
             textBoxCode.Name = "textBoxCode";
             textBoxCode.Size = new Size(136, 23);
             textBoxCode.TabIndex = 0;
+            textBoxCode.TextChanged += textBoxCode_TextChanged;
             // 
             // groupBox1
             // 
@@ -201,6 +205,7 @@
             Controls.Add(groupBoxLoadClient);
             Name = "Form1";
             Text = "Gestion de clientes";
+            Load += Form1_Load;
             groupBoxLoadClient.ResumeLayout(false);
             groupBoxLoadClient.PerformLayout();
             groupBox1.ResumeLayout(false);
