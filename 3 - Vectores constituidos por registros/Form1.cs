@@ -119,8 +119,7 @@ namespace _3___Vectores_constituidos_por_registros
                 return;
             }
 
-            if (!int.TryParse(textBoxCode.Text, out _) ||
-                !decimal.TryParse(textBoxDebt.Text, out _) ||
+            if (!decimal.TryParse(textBoxDebt.Text, out _) ||
                 !decimal.TryParse(textBoxLimitCredit.Text, out _))
             {
                 buttonLoad.Enabled = false;
