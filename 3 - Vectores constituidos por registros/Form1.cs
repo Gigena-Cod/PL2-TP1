@@ -15,7 +15,9 @@ namespace _3___Vectores_constituidos_por_registros
             public decimal limitCredit;
         }
 
-        Client[] clients = new Client[1000];
+        const int MAXIMUN_CLIENTS = 1;
+
+        Client[] clients = new Client[MAXIMUN_CLIENTS];
 
         int totalClients = 0;
 
@@ -30,6 +32,11 @@ namespace _3___Vectores_constituidos_por_registros
             totalClients++;
 
             MessageBox.Show("El cliente se cargó correctamente.", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if(totalClients < MAXIMUN_CLIENTS) return;
+
+            MessageBox.Show("No se pueden agregar más clientes, se ha alcanzado el límite.", "Límite alcanzado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void buttonListClients_Click(object sender, EventArgs e)
@@ -97,7 +104,7 @@ namespace _3___Vectores_constituidos_por_registros
 
         private void validateFields()
         {
-            if (totalClients == 1000)
+            if (totalClients == MAXIMUN_CLIENTS)
             {
                 buttonLoad.Enabled = false;
                 return;
