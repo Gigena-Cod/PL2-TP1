@@ -9,13 +9,13 @@ namespace _3___Vectores_constituidos_por_registros
 
         private struct Client
         {
-            public int code;
+            public string code;
             public string name;
             public decimal debt;
             public decimal limitCredit;
         }
 
-        const int MAXIMUN_CLIENTS = 1;
+        const int MAXIMUN_CLIENTS = 2;
 
         Client[] clients = new Client[MAXIMUN_CLIENTS];
 
@@ -31,17 +31,17 @@ namespace _3___Vectores_constituidos_por_registros
 
             totalClients++;
 
+            listClients();
+
+            calculateDebts();
+
             MessageBox.Show("El cliente se cargó correctamente.", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            if(totalClients < MAXIMUN_CLIENTS) return;
+
+            if (totalClients < MAXIMUN_CLIENTS) return;
 
             MessageBox.Show("No se pueden agregar más clientes, se ha alcanzado el límite.", "Límite alcanzado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-        }
-
-        private void buttonListClients_Click(object sender, EventArgs e)
-        {
-            listClients();
         }
 
         private void textBoxCode_TextChanged(object sender, EventArgs e)
@@ -67,13 +67,14 @@ namespace _3___Vectores_constituidos_por_registros
         private void Form1_Load(object sender, EventArgs e)
         {
             buttonLoad.Enabled = false;
+            labelTotalDebts.Text = Convert.ToString(0);
         }
 
         private Client createClient()
         {
             Client client = new Client();
 
-            client.code = Convert.ToInt32(textBoxCode.Text);
+            client.code = textBoxCode.Text;
             client.name = textBoxName.Text;
             client.debt = Convert.ToDecimal(textBoxDebt.Text);
             client.limitCredit = Convert.ToDecimal(textBoxLimitCredit.Text);       
@@ -89,6 +90,25 @@ namespace _3___Vectores_constituidos_por_registros
             textBoxLimitCredit.Text = string.Empty;
             buttonLoad.Enabled = false;
         }
+
+        private void calculateDebts()
+        { 
+            if (totalClients == 0)
+            {
+                labelTotalDebts.Text = "0";
+                return;
+            }
+             
+            decimal totalDebt = 0;
+             
+            for (int index = 0; index < totalClients; index++)
+            {
+                totalDebt += clients[index].debt;
+            }
+             
+            labelTotalDebts.Text = totalDebt.ToString("C");
+        }
+
 
         private void listClients()
         {
