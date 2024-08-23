@@ -39,15 +39,15 @@
             label1 = new Label();
             textBoxCode = new TextBox();
             groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewClients = new DataGridView();
             ColumnCode = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnDebt = new DataGridViewTextBoxColumn();
             ColumnLimitCredit = new DataGridViewTextBoxColumn();
-            button2 = new Button();
+            buttonListClients = new Button();
             groupBoxLoadClient.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
             SuspendLayout();
             // 
             // groupBoxLoadClient
@@ -144,8 +144,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(dataGridViewClients);
+            groupBox1.Controls.Add(buttonListClients);
             groupBox1.Location = new Point(12, 227);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(533, 305);
@@ -153,14 +153,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Consulta de datos";
             // 
-            // dataGridView1
+            // dataGridViewClients
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnName, ColumnDebt, ColumnLimitCredit });
-            dataGridView1.Location = new Point(19, 37);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(494, 210);
-            dataGridView1.TabIndex = 9;
+            dataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClients.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnName, ColumnDebt, ColumnLimitCredit });
+            dataGridViewClients.Location = new Point(19, 37);
+            dataGridViewClients.Name = "dataGridViewClients";
+            dataGridViewClients.Size = new Size(494, 210);
+            dataGridViewClients.TabIndex = 9;
             // 
             // ColumnCode
             // 
@@ -182,14 +182,15 @@
             ColumnLimitCredit.HeaderText = "Limite de crédito";
             ColumnLimitCredit.Name = "ColumnLimitCredit";
             // 
-            // button2
+            // buttonListClients
             // 
-            button2.Location = new Point(392, 262);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 28);
-            button2.TabIndex = 8;
-            button2.Text = "Listar";
-            button2.UseVisualStyleBackColor = true;
+            buttonListClients.Location = new Point(392, 262);
+            buttonListClients.Name = "buttonListClients";
+            buttonListClients.Size = new Size(121, 28);
+            buttonListClients.TabIndex = 8;
+            buttonListClients.Text = "Listar";
+            buttonListClients.UseVisualStyleBackColor = true;
+            buttonListClients.Click += buttonListClients_Click;
             // 
             // Form1
             // 
@@ -203,7 +204,7 @@
             groupBoxLoadClient.ResumeLayout(false);
             groupBoxLoadClient.PerformLayout();
             groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClients).EndInit();
             ResumeLayout(false);
         }
 
@@ -220,11 +221,11 @@
         private TextBox textBoxCode;
         private Button buttonLoad;
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewClients;
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnDebt;
         private DataGridViewTextBoxColumn ColumnLimitCredit;
-        private Button button2;
+        private Button buttonListClients;
     }
 }

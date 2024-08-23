@@ -21,13 +21,18 @@ namespace _3___Vectores_constituidos_por_registros
 
         private void buttonLoad_Click(object sender, EventArgs e)
         {
-            
+
 
             clients[totalClients] = CreateClient();
 
             ClearAllFields();
 
             totalClients++;
+        }
+
+        private void buttonListClients_Click(object sender, EventArgs e)
+        {
+            ListClients();
         }
 
         private Client CreateClient()
@@ -50,5 +55,16 @@ namespace _3___Vectores_constituidos_por_registros
             textBoxLimitCredit.Text = string.Empty;
         }
 
+        private void ListClients()
+        {
+            if (totalClients == 0) return;
+
+            for (int index = 0; index < totalClients; index++)
+            {
+                dataGridViewClients.Rows.Add(clients[index].code, clients[index].name, clients[index].debt, clients[index].limitCredit);
+            }
+        }
+
+       
     }
 }
