@@ -35,11 +35,11 @@
             label3 = new Label();
             comboBoxSortBy = new ComboBox();
             dataGridViewSellers = new DataGridView();
+            labelResuelt = new Label();
+            labelSalary = new Label();
             ColumnCode = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnSalary = new DataGridViewTextBoxColumn();
-            labelResuelt = new Label();
-            labelSalary = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewSellers).BeginInit();
             SuspendLayout();
             // 
@@ -56,6 +56,7 @@
             // comboBoxField
             // 
             comboBoxField.FormattingEnabled = true;
+            comboBoxField.Items.AddRange(new object[] { "Codigo", "Nombre", "Salario" });
             comboBoxField.Location = new Point(12, 105);
             comboBoxField.Name = "comboBoxField";
             comboBoxField.Size = new Size(176, 23);
@@ -82,6 +83,7 @@
             // comboBoxSortBy
             // 
             comboBoxSortBy.FormattingEnabled = true;
+            comboBoxSortBy.Items.AddRange(new object[] { "Ascendente", "Descendente" });
             comboBoxSortBy.Location = new Point(245, 105);
             comboBoxSortBy.Name = "comboBoxSortBy";
             comboBoxSortBy.Size = new Size(176, 23);
@@ -89,27 +91,15 @@
             // 
             // dataGridViewSellers
             // 
+            dataGridViewSellers.AllowUserToAddRows = false;
+            dataGridViewSellers.AllowUserToDeleteRows = false;
             dataGridViewSellers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewSellers.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnName, ColumnSalary });
             dataGridViewSellers.Location = new Point(10, 185);
             dataGridViewSellers.Name = "dataGridViewSellers";
+            dataGridViewSellers.ReadOnly = true;
             dataGridViewSellers.Size = new Size(500, 262);
             dataGridViewSellers.TabIndex = 6;
-            // 
-            // ColumnCode
-            // 
-            ColumnCode.HeaderText = "Codigo";
-            ColumnCode.Name = "ColumnCode";
-            // 
-            // ColumnName
-            // 
-            ColumnName.HeaderText = "Nombre";
-            ColumnName.Name = "ColumnName";
-            // 
-            // ColumnSalary
-            // 
-            ColumnSalary.HeaderText = "Salario";
-            ColumnSalary.Name = "ColumnSalary";
             // 
             // labelResuelt
             // 
@@ -129,6 +119,30 @@
             labelSalary.Size = new Size(47, 15);
             labelSalary.TabIndex = 8;
             labelSalary.Text = "Salarios";
+            // 
+            // ColumnCode
+            // 
+            ColumnCode.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnCode.HeaderText = "Codigo";
+            ColumnCode.Name = "ColumnCode";
+            ColumnCode.ReadOnly = true;
+            ColumnCode.Resizable = DataGridViewTriState.False;
+            // 
+            // ColumnName
+            // 
+            ColumnName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnName.HeaderText = "Nombre";
+            ColumnName.Name = "ColumnName";
+            ColumnName.ReadOnly = true;
+            ColumnName.Resizable = DataGridViewTriState.False;
+            // 
+            // ColumnSalary
+            // 
+            ColumnSalary.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnSalary.HeaderText = "Salario";
+            ColumnSalary.Name = "ColumnSalary";
+            ColumnSalary.ReadOnly = true;
+            ColumnSalary.Resizable = DataGridViewTriState.False;
             // 
             // ListSellers
             // 
@@ -160,10 +174,10 @@
         private Label label3;
         private ComboBox comboBoxSortBy;
         private DataGridView dataGridViewSellers;
+        private Label labelResuelt;
+        private Label labelSalary;
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnSalary;
-        private Label labelResuelt;
-        private Label labelSalary;
     }
 }

@@ -64,14 +64,14 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
 
             for (int i = 0; i < SellerDatasource.totalSellers; i++)
             {
-                dataGridViewSellers.Rows.Add(response[i].code, response[i].name, response[i].salary);
+                dataGridViewSellers.Rows.Add(response[i].code, response[i].name, response[i].salary.ToString("C"));
 
                 accSalaries += response[i].salary;
             }
 
             labelResuelt.Text = $"{SellerDatasource.totalSellers} vendedores";
 
-            labelSalary.Text = accSalaries.ToString();
+            labelSalary.Text = accSalaries.ToString("C");
         }
         private void label4_Click(object sender, EventArgs e)
         {
