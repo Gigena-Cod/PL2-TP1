@@ -35,7 +35,6 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
             try
             {
 
-
                 dataGridViewSellers.Enabled = false;
 
                 labelResuelt.Text = "Cargando...";
@@ -46,11 +45,13 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
 
                 comboBoxSortBy.Enabled = false;
 
-                dataGridViewSellers.Rows.Clear();
+                buttonSearch.Enabled = false;                
 
                 SellerService service = new SellerService();
 
                 Seller.SellerStruct[] response = await service.GetAllSellerAsync(comboBoxField.SelectedIndex, comboBoxSortBy.SelectedIndex);
+
+                dataGridViewSellers.Rows.Clear();
 
                 decimal accSalaries = 0;
 
@@ -77,6 +78,8 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
                 comboBoxField.Enabled = true;
 
                 comboBoxSortBy.Enabled = true;
+
+                buttonSearch.Enabled = true;
             }
 
 
