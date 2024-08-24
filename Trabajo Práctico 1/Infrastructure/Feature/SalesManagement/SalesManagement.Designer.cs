@@ -95,6 +95,7 @@
             consultaDeDatosDeUnVendedorToolStripMenuItem.Name = "consultaDeDatosDeUnVendedorToolStripMenuItem";
             consultaDeDatosDeUnVendedorToolStripMenuItem.Size = new Size(255, 22);
             consultaDeDatosDeUnVendedorToolStripMenuItem.Text = "Consulta de datos de un vendedor";
+            consultaDeDatosDeUnVendedorToolStripMenuItem.Click += consultaDeDatosDeUnVendedorToolStripMenuItem_Click;
             // 
             // formSalesManagement
             // 
@@ -106,6 +107,7 @@
             Name = "formSalesManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sales management";
+            WindowState = FormWindowState.Maximized;
             Load += formSalesManagement_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

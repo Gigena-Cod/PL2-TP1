@@ -1,6 +1,7 @@
 using Trabajo_Práctico_1.Domain.Datasource;
 using Trabajo_Práctico_1.Feature.ListSellers;
 using Trabajo_Práctico_1.Feature.NewSeller;
+using Trabajo_Práctico_1.Infrastructure.Feature.SearchSeller;
 
 namespace Trabajo_Práctico_1
 {
@@ -38,6 +39,12 @@ namespace Trabajo_Práctico_1
         private void formSalesManagement_Load(object sender, EventArgs e)
         {
             SellerDatasource.LoadMock();
+        }
+
+        private void consultaDeDatosDeUnVendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchSeller searchSeller = new SearchSeller();
+            searchSeller.ShowDialog();
         }
     }
 }

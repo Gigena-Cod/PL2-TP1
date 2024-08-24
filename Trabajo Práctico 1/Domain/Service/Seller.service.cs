@@ -34,7 +34,7 @@ namespace Trabajo_Práctico_1.Domain.Service
 
                 return true;
             }
-            catch (Exception ex)
+            catch 
             {
 
                 return false;
@@ -77,12 +77,44 @@ namespace Trabajo_Práctico_1.Domain.Service
                 }                 
                  
             }
-            catch (Exception ex)
+            catch
             {
                 return Array.Empty<Seller.SellerStruct>();
             }
         }
 
-        
+        public async Task<Seller.SellerStruct?> GetSellerAsync(int code)
+        {
+            try
+            {
+                if (SellerDatasource.totalSellers == 0)
+                {
+                    return null;
+                }
+
+                // Simula un retraso para imitar operaciones asincrónicas si es necesario
+                await Task.Delay(1000);
+
+                // Busca el vendedor por código
+                for (int i = 0; i < SellerDatasource.totalSellers; i++)
+                {
+                    if (SellerDatasource.sellers[i].code == code)
+                    {
+                        return SellerDatasource.sellers[i];
+                    }
+                }
+
+                // Retorna null si no se encuentra el vendedor
+                return null;
+            }
+            catch
+            {
+                // Puedes registrar el error o manejarlo de una manera específica si es necesario
+                // Console.WriteLine($"Error: {ex.Message}");
+                return null;
+            }
+        }
+
+
     }
 }

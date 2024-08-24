@@ -61,7 +61,7 @@
             comboBoxField.Location = new Point(12, 105);
             comboBoxField.Name = "comboBoxField";
             comboBoxField.Size = new Size(176, 23);
-            comboBoxField.TabIndex = 1; 
+            comboBoxField.TabIndex = 1;
             // 
             // label2
             // 
@@ -88,7 +88,7 @@
             comboBoxSortBy.Location = new Point(206, 105);
             comboBoxSortBy.Name = "comboBoxSortBy";
             comboBoxSortBy.Size = new Size(176, 23);
-            comboBoxSortBy.TabIndex = 5; 
+            comboBoxSortBy.TabIndex = 5;
             // 
             // dataGridViewSellers
             // 
@@ -171,7 +171,7 @@
             Controls.Add(label1);
             Name = "ListSellers";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Consulta de vendedores";
+            Text = "Listado general de vendedores";
             Load += ListSellers_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewSellers).EndInit();
             ResumeLayout(false);

@@ -21,7 +21,7 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
             InitializeComponent();
         }
 
-        private async void ListSellers_Load(object sender, EventArgs e)
+        private void ListSellers_Load(object sender, EventArgs e)
         {
             comboBoxField.SelectedIndex = Globals.COMBO_BOX_FIELD_CODE;
             comboBoxSortBy.SelectedIndex = Globals.COMBO_BOX_SORT_BY_ASC;

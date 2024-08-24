@@ -146,7 +146,7 @@
             Controls.Add(label1);
             Name = "NewSeller";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Crear vendedor";
+            Text = "Agregar nuevo vendedor";
             Load += NewSeller_Load;
             ResumeLayout(false);
             PerformLayout();
