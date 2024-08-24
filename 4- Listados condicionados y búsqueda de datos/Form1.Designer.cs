@@ -39,13 +39,13 @@
             label1 = new Label();
             textBoxCode = new TextBox();
             groupBox1 = new GroupBox();
+            labelTotalDebts = new Label();
+            label5 = new Label();
             dataGridViewClients = new DataGridView();
             ColumnCode = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnDebt = new DataGridViewTextBoxColumn();
             ColumnLimitCredit = new DataGridViewTextBoxColumn();
-            label5 = new Label();
-            labelTotalDebts = new Label();
             groupBoxLoadClient.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
@@ -159,6 +159,23 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Consulta de datos";
             // 
+            // labelTotalDebts
+            // 
+            labelTotalDebts.AutoSize = true;
+            labelTotalDebts.Location = new Point(392, 271);
+            labelTotalDebts.Name = "labelTotalDebts";
+            labelTotalDebts.Size = new Size(0, 15);
+            labelTotalDebts.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(284, 271);
+            label5.Name = "label5";
+            label5.Size = new Size(89, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Total de deudas";
+            // 
             // dataGridViewClients
             // 
             dataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -175,7 +192,7 @@
             // 
             // ColumnName
             // 
-            ColumnName.HeaderText = "ColumnName";
+            ColumnName.HeaderText = "Name";
             ColumnName.Name = "ColumnName";
             // 
             // ColumnDebt
@@ -187,23 +204,6 @@
             // 
             ColumnLimitCredit.HeaderText = "Limite de crédito";
             ColumnLimitCredit.Name = "ColumnLimitCredit";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(284, 271);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Total de deudas";
-            // 
-            // labelTotalDebts
-            // 
-            labelTotalDebts.AutoSize = true;
-            labelTotalDebts.Location = new Point(392, 271);
-            labelTotalDebts.Name = "labelTotalDebts";
-            labelTotalDebts.Size = new Size(0, 15);
-            labelTotalDebts.TabIndex = 10;
             // 
             // Form1
             // 
@@ -237,11 +237,11 @@
         private Button buttonLoad;
         private GroupBox groupBox1;
         private DataGridView dataGridViewClients;
+        private Label labelTotalDebts;
+        private Label label5;
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnDebt;
         private DataGridViewTextBoxColumn ColumnLimitCredit;
-        private Label labelTotalDebts;
-        private Label label5;
     }
 }

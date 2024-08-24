@@ -15,7 +15,7 @@ namespace _3___Vectores_constituidos_por_registros
             public decimal limitCredit;
         }
 
-        const int MAXIMUN_CLIENTS = 2;
+        const int MAXIMUN_CLIENTS = 20;
 
         Client[] clients = new Client[MAXIMUN_CLIENTS];
 
@@ -23,7 +23,21 @@ namespace _3___Vectores_constituidos_por_registros
 
         private void buttonLoad_Click(object sender, EventArgs e)
         {
+            string code = textBoxCode.Text.ToUpper();
 
+            bool exist = validateExistCode(code);
+
+            if (exist)
+            {
+                MessageBox.Show(
+                    "El código ingresado ya existe en el sistema. Por favor, ingrese un código diferente.",
+                    "Código Duplicado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                textBoxCode.Text = string.Empty;
+                return;
+            }
 
             clients[totalClients] = createClient();
 
@@ -35,14 +49,20 @@ namespace _3___Vectores_constituidos_por_registros
 
             calculateDebts();
 
-            MessageBox.Show("El cliente se cargó correctamente.", "Carga exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("El cliente se cargó correctamente.", "Carga Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-            if (totalClients < MAXIMUN_CLIENTS) return;
-
-            MessageBox.Show("No se pueden agregar más clientes, se ha alcanzado el límite.", "Límite alcanzado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            
+            if (totalClients >= MAXIMUN_CLIENTS)
+            {
+                MessageBox.Show(
+                    "No se pueden agregar más clientes, se ha alcanzado el límite.",
+                    "Límite Alcanzado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
         }
+
 
         private void textBoxCode_TextChanged(object sender, EventArgs e)
         {
@@ -68,13 +88,17 @@ namespace _3___Vectores_constituidos_por_registros
         {
             buttonLoad.Enabled = false;
             labelTotalDebts.Text = Convert.ToString(0);
+            loadMockClients();
+            listClients();
+            calculateDebts();
         }
 
         private Client createClient()
         {
             Client client = new Client();
 
-            client.code = textBoxCode.Text;
+           
+            client.code = textBoxCode.Text.ToUpper();
             client.name = textBoxName.Text;
             client.debt = Convert.ToDecimal(textBoxDebt.Text);
             client.limitCredit = Convert.ToDecimal(textBoxLimitCredit.Text);       
@@ -151,6 +175,33 @@ namespace _3___Vectores_constituidos_por_registros
 
         }
 
-        
+        private void loadMockClients()
+        {
+            clients[0] = new Client { code = "C001", name = "John Doe", debt = 1000.0m, limitCredit = 5000.0m };
+            clients[1] = new Client { code = "C002", name = "Jane Smith", debt = 250.0m, limitCredit = 2000.0m };
+            clients[2] = new Client { code = "C003", name = "Michael Brown", debt = 1500.0m, limitCredit = 7000.0m };
+            clients[3] = new Client { code = "C004", name = "Emily Davis", debt = 300.0m, limitCredit = 1500.0m };
+            clients[4] = new Client { code = "C005", name = "David Wilson", debt = 800.0m, limitCredit = 4000.0m };
+            clients[5] = new Client { code = "C006", name = "Sarah Miller", debt = 450.0m, limitCredit = 3500.0m };
+            clients[6] = new Client { code = "C007", name = "Chris Evans", debt = 1200.0m, limitCredit = 6000.0m };
+            clients[7] = new Client { code = "C008", name = "Laura Johnson", debt = 500.0m, limitCredit = 2500.0m };
+            clients[8] = new Client { code = "C009", name = "Kevin Anderson", debt = 900.0m, limitCredit = 4500.0m };
+            clients[9] = new Client { code = "C010", name = "Lisa Thompson", debt = 200.0m, limitCredit = 1000.0m };
+            totalClients = 10;
+        }
+
+        private bool validateExistCode(string code)
+        {
+            for (int i = 0; i < totalClients; i++)
+            {
+                if (clients[i].code == code)
+                {
+                    return true; // Si el código se encuentra, retorna inmediatamente
+                }
+            }
+            return false; // Si no se encuentra, retorna false
+        }
+
+
     }
 }
