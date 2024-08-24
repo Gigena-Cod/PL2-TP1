@@ -21,9 +21,9 @@ namespace _5__Método_de_burbuja_para_ordenar_datos_de_un_vector
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBoxField.SelectedIndex = CLIENT_CODE;
-            comboBoxSortBy.SelectedIndex = SORT_BY_DESC;
             service.loadMockClients();
+            comboBoxField.SelectedIndex = CLIENT_CODE;
+            comboBoxSortBy.SelectedIndex = SORT_BY_ASC;
             LoadDataGridViewClients();
         }
 
