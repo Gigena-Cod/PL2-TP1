@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
+            comboBoxField = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            comboBox2 = new ComboBox();
+            comboBoxSortBy = new ComboBox();
             groupBox1 = new GroupBox();
             dataGridViewClients = new DataGridView();
             ColumnCode = new DataGridViewTextBoxColumn();
@@ -42,14 +42,15 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxField
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Codigo", "Nombre completo", "Deuda", "Limite de credito" });
-            comboBox1.Location = new Point(15, 57);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(176, 23);
-            comboBox1.TabIndex = 0;
+            comboBoxField.FormattingEnabled = true;
+            comboBoxField.Items.AddRange(new object[] { "Codigo", "Nombre completo", "Deuda", "Limite de credito" });
+            comboBoxField.Location = new Point(15, 57);
+            comboBoxField.Name = "comboBoxField";
+            comboBoxField.Size = new Size(176, 23);
+            comboBoxField.TabIndex = 0;
+            comboBoxField.SelectedIndexChanged += comboBoxField_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -69,25 +70,26 @@
             label2.TabIndex = 3;
             label2.Text = "Ordenar por";
             // 
-            // comboBox2
+            // comboBoxSortBy
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Ascendente", "Descendente" });
-            comboBox2.Location = new Point(216, 57);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(176, 23);
-            comboBox2.TabIndex = 2;
+            comboBoxSortBy.FormattingEnabled = true;
+            comboBoxSortBy.Items.AddRange(new object[] { "Ascendente", "Descendente" });
+            comboBoxSortBy.Location = new Point(216, 57);
+            comboBoxSortBy.Name = "comboBoxSortBy";
+            comboBoxSortBy.Size = new Size(176, 23);
+            comboBoxSortBy.TabIndex = 2;
+            comboBoxSortBy.SelectedIndexChanged += comboBoxSortBy_SelectedIndexChanged;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(dataGridViewClients);
-            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(comboBoxSortBy);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comboBoxField);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(471, 414);
+            groupBox1.Size = new Size(491, 414);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Consulta de datos";
@@ -98,7 +100,7 @@
             dataGridViewClients.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnName, ColumnDebts, ColumnLimitCredit });
             dataGridViewClients.Location = new Point(15, 111);
             dataGridViewClients.Name = "dataGridViewClients";
-            dataGridViewClients.Size = new Size(443, 289);
+            dataGridViewClients.Size = new Size(460, 289);
             dataGridViewClients.TabIndex = 4;
             // 
             // ColumnCode
@@ -125,7 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(497, 436);
+            ClientSize = new Size(515, 436);
             Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Administracion de clientes";
@@ -138,10 +140,10 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox comboBoxField;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxSortBy;
         private GroupBox groupBox1;
         private DataGridView dataGridViewClients;
         private DataGridViewTextBoxColumn ColumnCode;
