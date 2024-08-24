@@ -11,5 +11,11 @@ namespace Trabajo_Práctico_1
         {
             this.Close();
         }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAboutMe formAboutMe = new FormAboutMe();
+            formAboutMe.ShowDialog();
+        }
     }
 }
