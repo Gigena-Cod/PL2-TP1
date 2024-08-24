@@ -39,6 +39,7 @@
             label1 = new Label();
             textBoxCode = new TextBox();
             groupBox1 = new GroupBox();
+            buttonListDebts = new Button();
             labelTotalDebts = new Label();
             label5 = new Label();
             dataGridViewClients = new DataGridView();
@@ -46,6 +47,7 @@
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnDebt = new DataGridViewTextBoxColumn();
             ColumnLimitCredit = new DataGridViewTextBoxColumn();
+            buttonListClients = new Button();
             groupBoxLoadClient.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
@@ -149,6 +151,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(buttonListClients);
+            groupBox1.Controls.Add(buttonListDebts);
             groupBox1.Controls.Add(labelTotalDebts);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(dataGridViewClients);
@@ -159,10 +163,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Consulta de datos";
             // 
+            // buttonListDebts
+            // 
+            buttonListDebts.Location = new Point(19, 258);
+            buttonListDebts.Name = "buttonListDebts";
+            buttonListDebts.Size = new Size(121, 28);
+            buttonListDebts.TabIndex = 9;
+            buttonListDebts.Text = "Listar deudores";
+            buttonListDebts.UseVisualStyleBackColor = true;
+            buttonListDebts.Click += buttonListDebts_Click;
+            // 
             // labelTotalDebts
             // 
             labelTotalDebts.AutoSize = true;
-            labelTotalDebts.Location = new Point(392, 271);
+            labelTotalDebts.Location = new Point(445, 271);
             labelTotalDebts.Name = "labelTotalDebts";
             labelTotalDebts.Size = new Size(0, 15);
             labelTotalDebts.TabIndex = 10;
@@ -170,7 +184,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(284, 271);
+            label5.Location = new Point(336, 271);
             label5.Name = "label5";
             label5.Size = new Size(89, 15);
             label5.TabIndex = 9;
@@ -204,6 +218,16 @@
             // 
             ColumnLimitCredit.HeaderText = "Limite de crédito";
             ColumnLimitCredit.Name = "ColumnLimitCredit";
+            // 
+            // buttonListClients
+            // 
+            buttonListClients.Location = new Point(155, 258);
+            buttonListClients.Name = "buttonListClients";
+            buttonListClients.Size = new Size(121, 28);
+            buttonListClients.TabIndex = 11;
+            buttonListClients.Text = "Listar todos";
+            buttonListClients.UseVisualStyleBackColor = true;
+            buttonListClients.Click += buttonListClients_Click;
             // 
             // Form1
             // 
@@ -243,5 +267,7 @@
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnDebt;
         private DataGridViewTextBoxColumn ColumnLimitCredit;
+        private Button buttonListDebts;
+        private Button buttonListClients;
     }
 }
