@@ -21,6 +21,7 @@ namespace Trabajo_Práctico_1.Feature.NewSeller
         SellerService service = new SellerService();
 
         private async void buttonCreateSeller_Click(object sender, EventArgs e){
+            buttonCreateSeller.Enabled = false;
             SellerService service = new SellerService();
 
             int.TryParse(textBoxCode.Text, out int code);
@@ -29,9 +30,12 @@ namespace Trabajo_Práctico_1.Feature.NewSeller
 
             bool response = await service.CreateSellerAsync(code,textBoxName.Text, salary);
 
+            buttonCreateSeller.Enabled = true;
+
             if (!response) {
                 MessageBox.Show($"Ocurrió un error al crear el vendedor", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 

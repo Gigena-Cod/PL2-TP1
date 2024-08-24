@@ -104,7 +104,9 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "formSalesManagement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sales management";
+            Load += formSalesManagement_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

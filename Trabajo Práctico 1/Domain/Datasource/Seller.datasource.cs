@@ -16,7 +16,7 @@ namespace Trabajo_Práctico_1.Domain.Datasource
 
         static public int totalSellers = 0;
 
-        public void LoadMock()
+        static public void LoadMock()
         {
             SellerStruct[] mockSellers = [ 
                 createSeller(1, "Ana Martínez", 1500.00m),

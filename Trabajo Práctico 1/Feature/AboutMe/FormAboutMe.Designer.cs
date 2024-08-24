@@ -114,6 +114,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label3);
             Name = "FormAboutMe";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Acerca de ";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

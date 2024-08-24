@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Trabajo_Práctico_1.Domain.Service;
+using Trabajo_Práctico_1.Domain.Models;
+using Trabajo_Práctico_1.Domain.Datasource;
 
 namespace Trabajo_Práctico_1.Feature.ListSellers
 {
@@ -17,6 +20,62 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
             InitializeComponent();
         }
 
-       
+        private async void ListSellers_Load(object sender, EventArgs e)
+        {
+            try {
+                dataGridViewSellers.Enabled = false;
+
+                labelResuelt.Text = "Cargando...";
+                
+                labelSalary.Text = "";
+
+                comboBoxField.Enabled = false;
+
+                comboBoxSortBy.Enabled = false;
+
+                dataGridViewSellers.Rows.Clear();
+
+                GetAllSellers();
+
+
+            }
+            catch {
+                MessageBox.Show("Ocurrió un error al cargar los vendedores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                dataGridViewSellers.Enabled = true;
+
+                comboBoxField.Enabled = true;
+
+                comboBoxSortBy.Enabled = true;
+            }
+           
+        }
+
+        private async void GetAllSellers()
+        {
+            SellerService service = new SellerService();
+
+            Seller.SellerStruct[] response = await service.GetAllSellerAsync();
+
+            decimal accSalaries = 0;
+
+            for (int i = 0; i < SellerDatasource.totalSellers; i++)
+            {
+                dataGridViewSellers.Rows.Add(response[i].code, response[i].name, response[i].salary);
+
+                accSalaries += response[i].salary;
+            }
+
+            labelResuelt.Text = $"{SellerDatasource.totalSellers} vendedores";
+
+            labelSalary.Text = accSalaries.ToString();
+        }
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

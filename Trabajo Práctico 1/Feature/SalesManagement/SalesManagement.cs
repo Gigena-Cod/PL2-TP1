@@ -1,3 +1,4 @@
+using Trabajo_Práctico_1.Domain.Datasource;
 using Trabajo_Práctico_1.Feature.ListSellers;
 using Trabajo_Práctico_1.Feature.NewSeller;
 
@@ -29,9 +30,14 @@ namespace Trabajo_Práctico_1
 
         private void listadoGeneralDeVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListSellers  listSellers = new ListSellers();
+            ListSellers listSellers = new ListSellers();
             listSellers.ShowDialog();
 
+        }
+
+        private void formSalesManagement_Load(object sender, EventArgs e)
+        {
+            SellerDatasource.LoadMock();
         }
     }
 }

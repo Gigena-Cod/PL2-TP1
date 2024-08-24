@@ -40,5 +40,22 @@ namespace Trabajo_Práctico_1.Domain.Service
             }
 
         }
+
+        public async Task<Seller.SellerStruct[]> GetAllSellerAsync()
+        {
+            try
+            {
+                if (SellerDatasource.totalSellers == 0) return Array.Empty<Seller.SellerStruct>();
+
+                await Task.Delay(1000);
+
+                return SellerDatasource.sellers;
+                 
+            }
+            catch (Exception ex)
+            {
+                return Array.Empty<Seller.SellerStruct>();
+            }
+        }
     }
 }
