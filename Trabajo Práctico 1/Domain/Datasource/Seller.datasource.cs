@@ -84,6 +84,90 @@ namespace Trabajo_Práctico_1.Domain.Datasource
 
             return sellers;
         }
+
+        static public SellerStruct[] SortByNameAscSellers()
+        {
+
+            if (totalSellers == 0) return Array.Empty<SellerStruct>();
+
+            for (int i = 0; i < totalSellers - 1; i++)
+            {
+                for (int j = 0; j < totalSellers - 1 - i; j++)
+                {
+                    if (sellers[j].name.CompareTo(sellers[j + 1].name) > 0)
+                    {
+                        SellerStruct sellerStruct = sellers[j];
+                        sellers[j] = sellers[j + 1];
+                        sellers[j + 1] = sellerStruct;
+                    }
+                }
+            }
+
+            return sellers;
+        }
+
+        static public SellerStruct[] SortByNameDescSellers()
+        {
+
+            if (totalSellers == 0) return Array.Empty<SellerStruct>();
+
+            for (int i = 0; i < totalSellers - 1; i++)
+            {
+                for (int j = 0; j < totalSellers - 1 - i; j++)
+                {
+                    if (sellers[j].name.CompareTo(sellers[j + 1].name) < 0)
+                    {
+                        SellerStruct sellerStruct = sellers[j];
+                        sellers[j] = sellers[j + 1];
+                        sellers[j + 1] = sellerStruct;
+                    }
+                }
+            }
+
+            return sellers;
+        }
+
+        static public SellerStruct[] SortBySalaryAscSellers()
+        {
+
+            if (totalSellers == 0) return Array.Empty<SellerStruct>();
+
+            for (int i = 0; i < totalSellers - 1; i++)
+            {
+                for (int j = 0; j < totalSellers - 1 - i; j++)
+                {
+                    if (sellers[j].salary>sellers[j + 1].salary)
+                    {
+                        SellerStruct sellerStruct = sellers[j];
+                        sellers[j] = sellers[j + 1];
+                        sellers[j + 1] = sellerStruct;
+                    }
+                }
+            }
+
+            return sellers;
+        }
+
+        static public SellerStruct[] SortBySalaryDescSellers()
+        {
+
+            if (totalSellers == 0) return Array.Empty<SellerStruct>();
+
+            for (int i = 0; i < totalSellers - 1; i++)
+            {
+                for (int j = 0; j < totalSellers - 1 - i; j++)
+                {
+                    if (sellers[j].salary < sellers[j + 1].salary)
+                        {
+                        SellerStruct sellerStruct = sellers[j];
+                        sellers[j] = sellers[j + 1];
+                        sellers[j + 1] = sellerStruct;
+                    }
+                }
+            }
+
+            return sellers;
+        }
     }
 
 }

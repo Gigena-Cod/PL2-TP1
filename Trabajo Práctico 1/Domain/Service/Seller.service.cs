@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Trabajo_Práctico_1.Domain.Datasource;
-using Trabajo_Práctico_1.Domain.Models; 
+using Trabajo_Práctico_1.Domain.Models;
+using Trabajo_Práctico_1.Infrastructure.Utils;
 
 namespace Trabajo_Práctico_1.Domain.Service
 {
@@ -52,12 +53,24 @@ namespace Trabajo_Práctico_1.Domain.Service
                 
                 switch (sortField)
                 {
-                    case 0:
-                        if(sortBy == 0)
+                    case Globals.COMBO_BOX_FIELD_CODE:
+                        if(sortBy == Globals.COMBO_BOX_SORT_BY_ASC)
                         {
                             return SellerDatasource.SortByCodeAscSellers();
                         }
-                        return SellerDatasource.SortByCodeDescSellers();   
+                        return SellerDatasource.SortByCodeDescSellers();
+                    case Globals.COMBO_BOX_FIELD_NAME:
+                        if (sortBy == Globals.COMBO_BOX_SORT_BY_ASC)
+                        {
+                            return SellerDatasource.SortByNameAscSellers();
+                        }
+                        return SellerDatasource.SortByNameDescSellers();
+                    case Globals.COMBO_BOX_FIELD_SALARY:
+                        if (sortBy == Globals.COMBO_BOX_SORT_BY_ASC)
+                        {
+                            return SellerDatasource.SortByCodeAscSellers();
+                        }
+                        return SellerDatasource.SortByCodeDescSellers();
                     default:
                         return SellerDatasource.sellers;
                         

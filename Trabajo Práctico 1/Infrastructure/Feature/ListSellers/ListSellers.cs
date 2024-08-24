@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Trabajo_Práctico_1.Domain.Service;
 using Trabajo_Práctico_1.Domain.Models;
 using Trabajo_Práctico_1.Domain.Datasource;
+using Trabajo_Práctico_1.Infrastructure.Utils;
 
 namespace Trabajo_Práctico_1.Feature.ListSellers
 {
@@ -22,8 +23,8 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
 
         private async void ListSellers_Load(object sender, EventArgs e)
         {
-            comboBoxField.SelectedIndex = 0;
-            comboBoxSortBy.SelectedIndex = 0;
+            comboBoxField.SelectedIndex = Globals.COMBO_BOX_FIELD_CODE;
+            comboBoxSortBy.SelectedIndex = Globals.COMBO_BOX_SORT_BY_ASC;
 
             GetAllSellers();
 
