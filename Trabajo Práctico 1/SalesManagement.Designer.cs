@@ -1,6 +1,6 @@
 ﻿namespace Trabajo_Práctico_1
 {
-    partial class Form1
+    partial class formSalesManagement
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,9 +30,9 @@
         {
             menuStrip1 = new MenuStrip();
             sistemaToolStripMenuItem = new ToolStripMenuItem();
-            vendedorToolStripMenuItem = new ToolStripMenuItem();
             acercaDeToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
+            vendedorToolStripMenuItem = new ToolStripMenuItem();
             agregarNuevoVendedorToolStripMenuItem = new ToolStripMenuItem();
             listadoGeneralDeVendedoresToolStripMenuItem = new ToolStripMenuItem();
             consultaDeDatosDeUnVendedorToolStripMenuItem = new ToolStripMenuItem();
@@ -55,13 +55,6 @@
             sistemaToolStripMenuItem.Size = new Size(60, 20);
             sistemaToolStripMenuItem.Text = "Sistema";
             // 
-            // vendedorToolStripMenuItem
-            // 
-            vendedorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarNuevoVendedorToolStripMenuItem, listadoGeneralDeVendedoresToolStripMenuItem, consultaDeDatosDeUnVendedorToolStripMenuItem });
-            vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
-            vendedorToolStripMenuItem.Size = new Size(69, 20);
-            vendedorToolStripMenuItem.Text = "Vendedor";
-            // 
             // acercaDeToolStripMenuItem
             // 
             acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
@@ -73,6 +66,14 @@
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             salirToolStripMenuItem.Size = new Size(180, 22);
             salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
+            // 
+            // vendedorToolStripMenuItem
+            // 
+            vendedorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarNuevoVendedorToolStripMenuItem, listadoGeneralDeVendedoresToolStripMenuItem, consultaDeDatosDeUnVendedorToolStripMenuItem });
+            vendedorToolStripMenuItem.Name = "vendedorToolStripMenuItem";
+            vendedorToolStripMenuItem.Size = new Size(69, 20);
+            vendedorToolStripMenuItem.Text = "Vendedor";
             // 
             // agregarNuevoVendedorToolStripMenuItem
             // 
@@ -92,15 +93,15 @@
             consultaDeDatosDeUnVendedorToolStripMenuItem.Size = new Size(255, 22);
             consultaDeDatosDeUnVendedorToolStripMenuItem.Text = "Consulta de datos de un vendedor";
             // 
-            // Form1
+            // formSalesManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
-            Text = "Form1";
+            Name = "formSalesManagement";
+            Text = "Sales management";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
