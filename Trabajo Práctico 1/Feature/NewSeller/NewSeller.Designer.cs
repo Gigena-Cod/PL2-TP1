@@ -31,10 +31,10 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxCode = new TextBox();
+            textBoxSalary = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            textBoxName = new TextBox();
             label5 = new Label();
             buttonCreateSeller = new Button();
             buttonCloseCreateSellet = new Button();
@@ -67,19 +67,21 @@
             label3.TabIndex = 2;
             label3.Text = "Codigo";
             // 
-            // textBox1
+            // textBoxCode
             // 
-            textBox1.Location = new Point(14, 103);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 23);
-            textBox1.TabIndex = 3;
+            textBoxCode.Location = new Point(14, 103);
+            textBoxCode.Name = "textBoxCode";
+            textBoxCode.Size = new Size(171, 23);
+            textBoxCode.TabIndex = 3;
+            textBoxCode.TextChanged += textBoxCode_TextChanged;
             // 
-            // textBox2
+            // textBoxSalary
             // 
-            textBox2.Location = new Point(214, 103);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(171, 23);
-            textBox2.TabIndex = 5;
+            textBoxSalary.Location = new Point(214, 103);
+            textBoxSalary.Name = "textBoxSalary";
+            textBoxSalary.Size = new Size(171, 23);
+            textBoxSalary.TabIndex = 5;
+            textBoxSalary.TextChanged += textBoxSalary_TextChanged;
             // 
             // label4
             // 
@@ -90,12 +92,13 @@
             label4.TabIndex = 4;
             label4.Text = "Salario";
             // 
-            // textBox3
+            // textBoxName
             // 
-            textBox3.Location = new Point(15, 166);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(373, 23);
-            textBox3.TabIndex = 7;
+            textBoxName.Location = new Point(15, 166);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(373, 23);
+            textBoxName.TabIndex = 7;
+            textBoxName.TextChanged += textBoxName_TextChanged;
             // 
             // label5
             // 
@@ -133,16 +136,17 @@
             ClientSize = new Size(397, 267);
             Controls.Add(buttonCloseCreateSellet);
             Controls.Add(buttonCreateSeller);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxName);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxSalary);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxCode);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "NewSeller";
             Text = "Crear vendedor";
+            Load += NewSeller_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,10 +156,10 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxCode;
+        private TextBox textBoxSalary;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox textBoxName;
         private Label label5;
         private Button buttonCreateSeller;
         private Button buttonCloseCreateSellet;

@@ -1,3 +1,5 @@
+using Trabajo_Práctico_1.Feature.NewSeller;
+
 namespace Trabajo_Práctico_1
 {
     public partial class formSalesManagement : Form
@@ -16,6 +18,12 @@ namespace Trabajo_Práctico_1
         {
             FormAboutMe formAboutMe = new FormAboutMe();
             formAboutMe.ShowDialog();
+        }
+
+        private void agregarNuevoVendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewSeller formNewSeller = new NewSeller();
+            formNewSeller.ShowDialog();
         }
     }
 }

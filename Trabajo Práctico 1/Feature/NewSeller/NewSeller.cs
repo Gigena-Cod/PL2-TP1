@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Trabajo_Práctico_1.Domain.Service;
 
 namespace Trabajo_Práctico_1.Feature.NewSeller
 {
@@ -17,14 +18,79 @@ namespace Trabajo_Práctico_1.Feature.NewSeller
             InitializeComponent();
         }
 
-        private void buttonCreateSeller_Click(object sender, EventArgs e)
-        {
-            //TODO: Create seller
-        }
+        SellerService service = new SellerService();
+
+        private async void buttonCreateSeller_Click(object sender, EventArgs e){
+            SellerService service = new SellerService();
+
+            int.TryParse(textBoxCode.Text, out int code);
+
+            decimal.TryParse(textBoxSalary.Text, out decimal salary);
+
+            bool response = await service.CreateSellerAsync(code,textBoxName.Text, salary);
+
+            if (!response) {
+                MessageBox.Show($"Ocurrió un error al crear el vendedor", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Vendedor agregado con exito", "Cliente creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            textBoxName.Clear();
+            textBoxCode.Clear();
+            textBoxSalary.Clear();
+
+
+    }
+
+
 
         private void buttonCloseCreateSellet_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void NewSeller_Load(object sender, EventArgs e)
+        {
+            buttonCreateSeller.Enabled = false;
+        }
+
+        private void validatePayload()
+        {
+            bool isCodeValid = !string.IsNullOrEmpty(textBoxCode.Text) &&
+                               int.TryParse(textBoxCode.Text, out int code) &&
+                               code > 0;
+
+            bool isNameValid = !string.IsNullOrEmpty(textBoxName.Text);
+
+            bool isSalaryValid = !string.IsNullOrEmpty(textBoxSalary.Text) &&
+                decimal.TryParse(textBoxSalary.Text, out decimal salary) &&
+                salary > 0;
+
+            if (!isCodeValid || !isNameValid || !isSalaryValid)
+            {
+                buttonCreateSeller.Enabled = false;
+                return;
+            }
+
+            buttonCreateSeller.Enabled = true;
+
+        }
+
+        private void textBoxCode_TextChanged(object sender, EventArgs e)
+        {
+            validatePayload();
+        }
+
+        private void textBoxSalary_TextChanged(object sender, EventArgs e)
+        {
+            validatePayload();
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+            validatePayload();
         }
     }
 }

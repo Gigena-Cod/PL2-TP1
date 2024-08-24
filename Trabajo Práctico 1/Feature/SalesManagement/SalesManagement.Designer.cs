@@ -58,14 +58,14 @@
             // acercaDeToolStripMenuItem
             // 
             acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            acercaDeToolStripMenuItem.Size = new Size(180, 22);
+            acercaDeToolStripMenuItem.Size = new Size(126, 22);
             acercaDeToolStripMenuItem.Text = "Acerca de";
             acercaDeToolStripMenuItem.Click += acercaDeToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(126, 22);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -81,6 +81,7 @@
             agregarNuevoVendedorToolStripMenuItem.Name = "agregarNuevoVendedorToolStripMenuItem";
             agregarNuevoVendedorToolStripMenuItem.Size = new Size(255, 22);
             agregarNuevoVendedorToolStripMenuItem.Text = "Agregar nuevo vendedor";
+            agregarNuevoVendedorToolStripMenuItem.Click += this.agregarNuevoVendedorToolStripMenuItem_Click;
             // 
             // listadoGeneralDeVendedoresToolStripMenuItem
             // 

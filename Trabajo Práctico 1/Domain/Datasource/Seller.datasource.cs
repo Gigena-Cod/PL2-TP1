@@ -11,9 +11,9 @@ namespace Trabajo_Práctico_1.Domain.Datasource
     {
         public const int MAXIMUN_SELLERS = 10000;
 
-        public SellerStruct[] sellers = new SellerStruct[MAXIMUN_SELLERS];
+        static public SellerStruct[] sellers = new SellerStruct[MAXIMUN_SELLERS];
 
-        public int totalSellers = 0;
+        static public int totalSellers = 0;
 
     }
 
