@@ -1,3 +1,4 @@
+using Trabajo_Práctico_1.Feature.ListSellers;
 using Trabajo_Práctico_1.Feature.NewSeller;
 
 namespace Trabajo_Práctico_1
@@ -24,6 +25,13 @@ namespace Trabajo_Práctico_1
         {
             NewSeller formNewSeller = new NewSeller();
             formNewSeller.ShowDialog();
+        }
+
+        private void listadoGeneralDeVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListSellers  listSellers = new ListSellers();
+            listSellers.ShowDialog();
+
         }
     }
 }

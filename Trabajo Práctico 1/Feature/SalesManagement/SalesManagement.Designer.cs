@@ -81,13 +81,14 @@
             agregarNuevoVendedorToolStripMenuItem.Name = "agregarNuevoVendedorToolStripMenuItem";
             agregarNuevoVendedorToolStripMenuItem.Size = new Size(255, 22);
             agregarNuevoVendedorToolStripMenuItem.Text = "Agregar nuevo vendedor";
-            agregarNuevoVendedorToolStripMenuItem.Click += this.agregarNuevoVendedorToolStripMenuItem_Click;
+            agregarNuevoVendedorToolStripMenuItem.Click += agregarNuevoVendedorToolStripMenuItem_Click;
             // 
             // listadoGeneralDeVendedoresToolStripMenuItem
             // 
             listadoGeneralDeVendedoresToolStripMenuItem.Name = "listadoGeneralDeVendedoresToolStripMenuItem";
             listadoGeneralDeVendedoresToolStripMenuItem.Size = new Size(255, 22);
             listadoGeneralDeVendedoresToolStripMenuItem.Text = "Listado general de vendedores";
+            listadoGeneralDeVendedoresToolStripMenuItem.Click += listadoGeneralDeVendedoresToolStripMenuItem_Click;
             // 
             // consultaDeDatosDeUnVendedorToolStripMenuItem
             // 
