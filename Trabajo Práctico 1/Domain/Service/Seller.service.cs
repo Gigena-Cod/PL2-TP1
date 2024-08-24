@@ -30,6 +30,7 @@ namespace Trabajo_Práctico_1.Domain.Service
                 SellerDatasource.sellers[SellerDatasource.totalSellers] = newSeller;
 
                 SellerDatasource.totalSellers++;
+
                 return true;
             }
             catch (Exception ex)
@@ -41,15 +42,26 @@ namespace Trabajo_Práctico_1.Domain.Service
 
         }
 
-        public async Task<Seller.SellerStruct[]> GetAllSellerAsync()
+        public async Task<Seller.SellerStruct[]> GetAllSellerAsync(int sortField, int sortBy)
         {
             try
             {
                 if (SellerDatasource.totalSellers == 0) return Array.Empty<Seller.SellerStruct>();
-
+                        
                 await Task.Delay(1000);
-
-                return SellerDatasource.sellers;
+                
+                switch (sortField)
+                {
+                    case 0:
+                        if(sortBy == 0)
+                        {
+                            return SellerDatasource.SortByCodeAscSellers();
+                        }
+                        return SellerDatasource.SortByCodeDescSellers();   
+                    default:
+                        return SellerDatasource.sellers;
+                        
+                }                 
                  
             }
             catch (Exception ex)

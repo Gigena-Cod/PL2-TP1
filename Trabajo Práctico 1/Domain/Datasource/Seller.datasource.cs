@@ -45,7 +45,7 @@ namespace Trabajo_Práctico_1.Domain.Datasource
             totalSellers = mockSellers.Length;
         }
 
-        public SellerStruct[] SortByCodeAscSellers() {
+        static public SellerStruct[] SortByCodeAscSellers() {
 
             if(totalSellers == 0) return Array.Empty<SellerStruct>();
 
@@ -64,7 +64,7 @@ namespace Trabajo_Práctico_1.Domain.Datasource
             return sellers;
         }
 
-        public SellerStruct[] SortByCodeDescSellers()
+        static public SellerStruct[] SortByCodeDescSellers()
         {
 
             if (totalSellers == 0) return Array.Empty<SellerStruct>();

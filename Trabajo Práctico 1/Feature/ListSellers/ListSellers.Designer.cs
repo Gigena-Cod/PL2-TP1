@@ -40,6 +40,7 @@
             ColumnSalary = new DataGridViewTextBoxColumn();
             labelResuelt = new Label();
             labelSalary = new Label();
+            buttonSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewSellers).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             comboBoxField.Location = new Point(12, 105);
             comboBoxField.Name = "comboBoxField";
             comboBoxField.Size = new Size(176, 23);
-            comboBoxField.TabIndex = 1;
+            comboBoxField.TabIndex = 1; 
             // 
             // label2
             // 
@@ -74,7 +75,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(245, 77);
+            label3.Location = new Point(206, 77);
             label3.Name = "label3";
             label3.Size = new Size(71, 15);
             label3.TabIndex = 4;
@@ -84,10 +85,10 @@
             // 
             comboBoxSortBy.FormattingEnabled = true;
             comboBoxSortBy.Items.AddRange(new object[] { "Ascendente", "Descendente" });
-            comboBoxSortBy.Location = new Point(245, 105);
+            comboBoxSortBy.Location = new Point(206, 105);
             comboBoxSortBy.Name = "comboBoxSortBy";
             comboBoxSortBy.Size = new Size(176, 23);
-            comboBoxSortBy.TabIndex = 5;
+            comboBoxSortBy.TabIndex = 5; 
             // 
             // dataGridViewSellers
             // 
@@ -144,11 +145,22 @@
             labelSalary.TabIndex = 8;
             labelSalary.Text = "Salarios";
             // 
+            // buttonSearch
+            // 
+            buttonSearch.Location = new Point(419, 100);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(91, 30);
+            buttonSearch.TabIndex = 9;
+            buttonSearch.Text = "Buscar";
+            buttonSearch.UseVisualStyleBackColor = true;
+            buttonSearch.Click += buttonSearch_Click;
+            // 
             // ListSellers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(522, 463);
+            ClientSize = new Size(522, 459);
+            Controls.Add(buttonSearch);
             Controls.Add(labelSalary);
             Controls.Add(labelResuelt);
             Controls.Add(dataGridViewSellers);
@@ -179,5 +191,6 @@
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnSalary;
+        private Button buttonSearch;
     }
 }

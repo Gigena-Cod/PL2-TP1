@@ -22,11 +22,23 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
 
         private async void ListSellers_Load(object sender, EventArgs e)
         {
-            try {
+            comboBoxField.SelectedIndex = 0;
+            comboBoxSortBy.SelectedIndex = 0;
+
+            GetAllSellers();
+
+        }
+
+        private async void GetAllSellers()
+        {
+            try
+            {
+
+
                 dataGridViewSellers.Enabled = false;
 
                 labelResuelt.Text = "Cargando...";
-                
+
                 labelSalary.Text = "";
 
                 comboBoxField.Enabled = false;
@@ -35,11 +47,25 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
 
                 dataGridViewSellers.Rows.Clear();
 
-                GetAllSellers();
+                SellerService service = new SellerService();
 
+                Seller.SellerStruct[] response = await service.GetAllSellerAsync(comboBoxField.SelectedIndex, comboBoxSortBy.SelectedIndex);
 
+                decimal accSalaries = 0;
+
+                for (int i = 0; i < SellerDatasource.totalSellers; i++)
+                {
+                    dataGridViewSellers.Rows.Add(response[i].code, response[i].name, response[i].salary.ToString("C"));
+
+                    accSalaries += response[i].salary;
+                }
+
+                labelResuelt.Text = $"{SellerDatasource.totalSellers} vendedores";
+
+                labelSalary.Text = accSalaries.ToString("C");
             }
-            catch {
+            catch
+            {
                 MessageBox.Show("Ocurrió un error al cargar los vendedores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -51,31 +77,17 @@ namespace Trabajo_Práctico_1.Feature.ListSellers
 
                 comboBoxSortBy.Enabled = true;
             }
-           
-        }
 
-        private async void GetAllSellers()
-        {
-            SellerService service = new SellerService();
 
-            Seller.SellerStruct[] response = await service.GetAllSellerAsync();
-
-            decimal accSalaries = 0;
-
-            for (int i = 0; i < SellerDatasource.totalSellers; i++)
-            {
-                dataGridViewSellers.Rows.Add(response[i].code, response[i].name, response[i].salary.ToString("C"));
-
-                accSalaries += response[i].salary;
-            }
-
-            labelResuelt.Text = $"{SellerDatasource.totalSellers} vendedores";
-
-            labelSalary.Text = accSalaries.ToString("C");
         }
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }       
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            GetAllSellers();
         }
     }
 }
