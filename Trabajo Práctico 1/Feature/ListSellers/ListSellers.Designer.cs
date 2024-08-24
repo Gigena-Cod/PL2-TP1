@@ -35,11 +35,11 @@
             label3 = new Label();
             comboBoxSortBy = new ComboBox();
             dataGridViewSellers = new DataGridView();
-            labelResuelt = new Label();
-            labelSalary = new Label();
             ColumnCode = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnSalary = new DataGridViewTextBoxColumn();
+            labelResuelt = new Label();
+            labelSalary = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewSellers).BeginInit();
             SuspendLayout();
             // 
@@ -101,25 +101,6 @@
             dataGridViewSellers.Size = new Size(500, 262);
             dataGridViewSellers.TabIndex = 6;
             // 
-            // labelResuelt
-            // 
-            labelResuelt.AutoSize = true;
-            labelResuelt.Location = new Point(12, 147);
-            labelResuelt.Name = "labelResuelt";
-            labelResuelt.Size = new Size(64, 15);
-            labelResuelt.TabIndex = 7;
-            labelResuelt.Text = "Resultados";
-            labelResuelt.Click += label4_Click;
-            // 
-            // labelSalary
-            // 
-            labelSalary.AutoSize = true;
-            labelSalary.Location = new Point(141, 147);
-            labelSalary.Name = "labelSalary";
-            labelSalary.Size = new Size(47, 15);
-            labelSalary.TabIndex = 8;
-            labelSalary.Text = "Salarios";
-            // 
             // ColumnCode
             // 
             ColumnCode.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -143,6 +124,25 @@
             ColumnSalary.Name = "ColumnSalary";
             ColumnSalary.ReadOnly = true;
             ColumnSalary.Resizable = DataGridViewTriState.False;
+            // 
+            // labelResuelt
+            // 
+            labelResuelt.AutoSize = true;
+            labelResuelt.Location = new Point(12, 147);
+            labelResuelt.Name = "labelResuelt";
+            labelResuelt.Size = new Size(64, 15);
+            labelResuelt.TabIndex = 7;
+            labelResuelt.Text = "Resultados";
+            labelResuelt.Click += label4_Click;
+            // 
+            // labelSalary
+            // 
+            labelSalary.AutoSize = true;
+            labelSalary.Location = new Point(141, 147);
+            labelSalary.Name = "labelSalary";
+            labelSalary.Size = new Size(47, 15);
+            labelSalary.TabIndex = 8;
+            labelSalary.Text = "Salarios";
             // 
             // ListSellers
             // 

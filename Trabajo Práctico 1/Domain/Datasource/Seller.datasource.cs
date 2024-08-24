@@ -45,6 +45,45 @@ namespace Trabajo_Práctico_1.Domain.Datasource
             totalSellers = mockSellers.Length;
         }
 
+        public SellerStruct[] SortByCodeAscSellers() {
+
+            if(totalSellers == 0) return Array.Empty<SellerStruct>();
+
+            for (int i=0; i < totalSellers - 1;i++)
+            {
+                for (int j=0; j < totalSellers - 1 - i; j++){
+                    if (sellers[j].code.CompareTo(sellers[j+1].code)>0)
+                    {
+                        SellerStruct sellerStruct = sellers[j];
+                        sellers[j] = sellers[j + 1];
+                        sellers[j + 1] = sellerStruct;
+                    }
+                }
+            }
+
+            return sellers;
+        }
+
+        public SellerStruct[] SortByCodeDescSellers()
+        {
+
+            if (totalSellers == 0) return Array.Empty<SellerStruct>();
+
+            for (int i = 0; i < totalSellers - 1; i++)
+            {
+                for (int j = 0; j < totalSellers - 1 - i; j++)
+                {
+                    if (sellers[j].code.CompareTo(sellers[j + 1].code) < 0)
+                    {
+                        SellerStruct sellerStruct = sellers[j];
+                        sellers[j] = sellers[j + 1];
+                        sellers[j + 1] = sellerStruct;
+                    }
+                }
+            }
+
+            return sellers;
+        }
     }
 
 }

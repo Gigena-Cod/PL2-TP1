@@ -57,5 +57,7 @@ namespace Trabajo_Práctico_1.Domain.Service
                 return Array.Empty<Seller.SellerStruct>();
             }
         }
+
+        
     }
 }
