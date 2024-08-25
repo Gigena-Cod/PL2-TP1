@@ -32,6 +32,7 @@
             label2 = new Label();
             button1 = new Button();
             textBox = new TextBox();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -47,17 +48,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 88);
+            label2.Location = new Point(12, 81);
             label2.Name = "label2";
             label2.Size = new Size(35, 15);
             label2.TabIndex = 1;
             label2.Text = "Texto";
+            label2.Click += label2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(259, 159);
+            button1.Location = new Point(267, 94);
             button1.Name = "button1";
-            button1.Size = new Size(101, 33);
+            button1.Size = new Size(93, 31);
             button1.TabIndex = 2;
             button1.Text = "Grabar";
             button1.UseVisualStyleBackColor = true;
@@ -66,20 +68,30 @@
             // textBox
             // 
             textBox.ForeColor = Color.Gray;
-            textBox.Location = new Point(12, 116);
+            textBox.Location = new Point(12, 99);
             textBox.Name = "textBox";
-            textBox.Size = new Size(348, 23);
+            textBox.Size = new Size(172, 23);
             textBox.TabIndex = 3;
             textBox.Text = "Ingrese un texto";
             textBox.TextChanged += textBox_TextChanged;
             textBox.Enter += textBox_Enter;
             textBox.Leave += textBox_Leave;
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(15, 140);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(345, 154);
+            listBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(372, 206);
+            ClientSize = new Size(372, 317);
+            Controls.Add(listBox1);
             Controls.Add(textBox);
             Controls.Add(button1);
             Controls.Add(label2);
@@ -87,6 +99,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Grabar datos";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,5 +110,6 @@
         private Label label2;
         private Button button1;
         private TextBox textBox;
+        private ListBox listBox1;
     }
 }

@@ -34,17 +34,21 @@ namespace Grabar_y_leer_un_archivo_de_texto
 
             FileClass.Record(textBox.Text);
 
-            MessageBox.Show("Texto grabado correctamente","Grabado de texto",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            FileClass.Read(listBox1);
 
-            textBox.Text=string.Empty;
+            MessageBox.Show("Texto grabado correctamente", "Grabado de texto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            textBox.Text = string.Empty;
+
+
         }
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            validateText(textBox,button1);
+            validateText(textBox, button1);
         }
 
-        private void validateText(TextBox textBox,Button button)
+        private void validateText(TextBox textBox, Button button)
         {
             if (textBox.Text == string.Empty)
             {
@@ -53,6 +57,16 @@ namespace Grabar_y_leer_un_archivo_de_texto
             }
 
             button.Enabled = true;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            FileClass.Read(listBox1);
         }
     }
 }
