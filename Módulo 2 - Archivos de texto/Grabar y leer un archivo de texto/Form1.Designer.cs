@@ -61,6 +61,7 @@
             button1.TabIndex = 2;
             button1.Text = "Grabar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox
             // 
@@ -70,6 +71,7 @@
             textBox.Size = new Size(348, 23);
             textBox.TabIndex = 3;
             textBox.Text = "Ingrese un texto";
+            textBox.TextChanged += textBox_TextChanged;
             textBox.Enter += textBox_Enter;
             textBox.Leave += textBox_Leave;
             // 
