@@ -31,7 +31,7 @@
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
-            textBox1 = new TextBox();
+            textBox = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -62,23 +62,28 @@
             button1.Text = "Grabar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBox
             // 
-            textBox1.Location = new Point(12, 116);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(348, 23);
-            textBox1.TabIndex = 3;
+            textBox.ForeColor = Color.Gray;
+            textBox.Location = new Point(12, 116);
+            textBox.Name = "textBox";
+            textBox.Size = new Size(348, 23);
+            textBox.TabIndex = 3;
+            textBox.Text = "Ingrese un texto";
+            textBox.Enter += textBox_Enter;
+            textBox.Leave += textBox_Leave;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(372, 206);
-            Controls.Add(textBox1);
+            Controls.Add(textBox);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Grabar datos";
             ResumeLayout(false);
             PerformLayout();
@@ -89,6 +94,6 @@
         private Label label1;
         private Label label2;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox textBox;
     }
 }
