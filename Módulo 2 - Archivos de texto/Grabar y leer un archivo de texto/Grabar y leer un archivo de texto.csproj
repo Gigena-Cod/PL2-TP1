@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <RootNamespace>_1__Grabar_y_leer_un_archivo_de_texto_con_una_sola_columna_de_datos</RootNamespace>
+    <RootNamespace>Grabar_y_leer_un_archivo_de_texto</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
