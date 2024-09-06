@@ -10,12 +10,13 @@ namespace Domain.Services
 
         ClientAdapter adapter = new();
 
-        public List<Client> getClients()
+        public (List<Client>,int,decimal, decimal) getClients()
         {
-
-            string clientCSV;
+            string? clientCSV;
 
             List<Client> clients = new();
+
+            decimal totalDebts = 0;
 
             using (StreamReader streamReader = new StreamReader(filename, true))
             {
@@ -26,12 +27,19 @@ namespace Domain.Services
 
                     Client adapted = adapter.CSVToClient(clientCSV);
 
+                    totalDebts += adapted.Debt;
+
                     clients.Add(adapted);
 
                     clientCSV = streamReader.ReadLine();
                 }
 
-                return clients;
+                int totalClients = clients.Count;
+
+                decimal averageDebt = totalDebts/clients.Count;
+
+
+                return (clients, totalClients, totalDebts, averageDebt);
             }
         }
 

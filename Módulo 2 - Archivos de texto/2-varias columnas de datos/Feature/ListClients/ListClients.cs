@@ -25,12 +25,19 @@ namespace _2_varias_columnas_de_datos.Feature.ListClients
         {
             dataGridViewClients.Rows.Clear();
 
-            List<Client> clients = clientService.getClients();
+            var (clients, totalClients, totalDebt, averageDebt) = clientService.getClients();
+
 
             foreach (Client client in clients)
             {
-                dataGridViewClients.Rows.Add(client.Code, client.FullName, client.Debt, client.CreditLimit);
+                dataGridViewClients.Rows.Add(client.Code, client.FullName, client.Debt.ToString("C"), client.CreditLimit.ToString("C"));
             }
+
+            textBoxDebts.Text = totalDebt.ToString("C");
+
+            textBoxTotalClientes.Text = totalClients.ToString();
+
+            textBoxAverage.Text = averageDebt.ToString("C");
 
         }
     }
