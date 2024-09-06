@@ -37,6 +37,7 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             clToolStripMenuItem = new ToolStripMenuItem();
             nueToolStripMenuItem = new ToolStripMenuItem();
+            verTodosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,19 +70,19 @@
             // acercaraToolStripMenuItem
             // 
             acercaraToolStripMenuItem.Name = "acercaraToolStripMenuItem";
-            acercaraToolStripMenuItem.Size = new Size(180, 22);
+            acercaraToolStripMenuItem.Size = new Size(126, 22);
             acercaraToolStripMenuItem.Text = "Acerca de";
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(126, 22);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // clToolStripMenuItem
             // 
-            clToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nueToolStripMenuItem });
+            clToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nueToolStripMenuItem, verTodosToolStripMenuItem });
             clToolStripMenuItem.Name = "clToolStripMenuItem";
             clToolStripMenuItem.Size = new Size(61, 20);
             clToolStripMenuItem.Text = "Clientes";
@@ -93,14 +94,21 @@
             nueToolStripMenuItem.Text = "Nuevo";
             nueToolStripMenuItem.Click += nueToolStripMenuItem_Click;
             // 
-            // Form1
+            // verTodosToolStripMenuItem
+            // 
+            verTodosToolStripMenuItem.Name = "verTodosToolStripMenuItem";
+            verTodosToolStripMenuItem.Size = new Size(180, 22);
+            verTodosToolStripMenuItem.Text = "Ver todos";
+            verTodosToolStripMenuItem.Click += verTodosToolStripMenuItem_Click;
+            // 
+            // ClientsManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "ClientsManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrador de clientes";
             WindowState = FormWindowState.Maximized;
@@ -120,5 +128,6 @@
         private ToolStripMenuItem acercaraToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem nueToolStripMenuItem;
+        private ToolStripMenuItem verTodosToolStripMenuItem;
     }
 }

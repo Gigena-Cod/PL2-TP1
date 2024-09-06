@@ -1,4 +1,5 @@
 using _2_varias_columnas_de_datos.Feature.CreateClient;
+using _2_varias_columnas_de_datos.Feature.ListClients;
 
 namespace _2_varias_columnas_de_datos
 {
@@ -18,7 +19,14 @@ namespace _2_varias_columnas_de_datos
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        this.Close();
+            this.Close();
+        }
+
+        private void verTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListClients listClients = new ListClients();
+
+            listClients.ShowDialog();
         }
     }
 }

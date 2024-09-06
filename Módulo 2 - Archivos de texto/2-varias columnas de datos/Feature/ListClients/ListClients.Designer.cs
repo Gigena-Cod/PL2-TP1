@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridViewClients = new DataGridView();
             ColumnCode = new DataGridViewTextBoxColumn();
             ColumnFullName = new DataGridViewTextBoxColumn();
             ColumnDebt = new DataGridViewTextBoxColumn();
             ColumnCredit = new DataGridViewTextBoxColumn();
             buttonSave = new Button();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewClients
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnFullName, ColumnDebt, ColumnCredit });
-            dataGridView1.Location = new Point(21, 83);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(530, 250);
-            dataGridView1.TabIndex = 1;
+            dataGridViewClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClients.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnFullName, ColumnDebt, ColumnCredit });
+            dataGridViewClients.Location = new Point(21, 83);
+            dataGridViewClients.Name = "dataGridViewClients";
+            dataGridViewClients.Size = new Size(530, 250);
+            dataGridViewClients.TabIndex = 1;
             // 
             // ColumnCode
             // 
@@ -79,6 +79,7 @@
             buttonSave.TabIndex = 18;
             buttonSave.Text = "Listar";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // label2
             // 
@@ -97,16 +98,16 @@
             ClientSize = new Size(573, 427);
             Controls.Add(label2);
             Controls.Add(buttonSave);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewClients);
             Name = "ListClients";
             Text = "Listado de clientes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClients).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewClients;
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnFullName;
         private DataGridViewTextBoxColumn ColumnDebt;
