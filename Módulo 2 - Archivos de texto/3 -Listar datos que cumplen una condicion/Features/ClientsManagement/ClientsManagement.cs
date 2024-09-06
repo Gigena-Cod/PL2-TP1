@@ -1,5 +1,6 @@
 using _2_varias_columnas_de_datos.Feature.CreateClient;
 using _2_varias_columnas_de_datos.Feature.ListClients;
+using _2_varias_columnas_de_datos.Features.ListDebtorClients;
 
 namespace _2_varias_columnas_de_datos
 {
@@ -41,6 +42,13 @@ namespace _2_varias_columnas_de_datos
             ListClients listClients = new ListClients();
 
             listClients.ShowDialog();
+        }
+
+        private void verTodosLosDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListDebtorClients listDebtorClients = new ListDebtorClients();
+
+            listDebtorClients.ShowDialog();
         }
     }
 }

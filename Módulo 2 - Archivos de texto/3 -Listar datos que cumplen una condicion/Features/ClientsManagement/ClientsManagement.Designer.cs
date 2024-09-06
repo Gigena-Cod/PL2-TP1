@@ -107,6 +107,7 @@
             verTodosLosDeudoresToolStripMenuItem.Name = "verTodosLosDeudoresToolStripMenuItem";
             verTodosLosDeudoresToolStripMenuItem.Size = new Size(193, 22);
             verTodosLosDeudoresToolStripMenuItem.Text = "Ver todos los deudores";
+            verTodosLosDeudoresToolStripMenuItem.Click += verTodosLosDeudoresToolStripMenuItem_Click;
             // 
             // ClientsManagement
             // 
