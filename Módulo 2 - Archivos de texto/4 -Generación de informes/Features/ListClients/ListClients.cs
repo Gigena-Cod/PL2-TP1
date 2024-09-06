@@ -35,6 +35,9 @@ namespace _2_varias_columnas_de_datos.Feature.ListClients
         private void button1_Click(object sender, EventArgs e)
         {
             clientService.PostReportClients();
+
+            MessageBox.Show("Reporte generado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

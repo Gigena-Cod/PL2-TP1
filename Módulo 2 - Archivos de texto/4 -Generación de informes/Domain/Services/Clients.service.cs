@@ -57,49 +57,40 @@ namespace Domain.Services
 
             decimal totalClients = 0;
             decimal totalDebts = 0;
-
-            try
+                       
+            using (StreamReader streamReader = new StreamReader(filename, Encoding.UTF8))
             {
-                using (StreamReader streamReader = new StreamReader(filename, Encoding.UTF8))
+                using (StreamWriter streamWriter = new StreamWriter("ReporteClientes.csv", false, Encoding.UTF8))
                 {
-                    using (StreamWriter streamWriter = new StreamWriter("ReporteClientes.csv", false, Encoding.UTF8))
+                    clientCSV = streamReader.ReadLine();
+
+                    string title = $"Reporte de clientes{SEPARATOR}{SEPARATOR}{SEPARATOR}";
+                    streamWriter.WriteLine(title);
+                    streamWriter.WriteLine(BREAK_LINE);
+                    streamWriter.WriteLine(COLUMNS_LINE);
+
+                    while (clientCSV != null)
                     {
+                        // Write the CSV line to the report
+                        streamWriter.WriteLine(clientCSV);
+
+                        Client adapted = adapter.CSVToClient(clientCSV);
+
+                        totalDebts += adapted.Debt;
+                        totalClients += 1;
+
                         clientCSV = streamReader.ReadLine();
-
-                        string title = $"Reporte de clientes{SEPARATOR}{SEPARATOR}{SEPARATOR}";
-                        streamWriter.WriteLine(title);
-                        streamWriter.WriteLine(BREAK_LINE);
-                        streamWriter.WriteLine(COLUMNS_LINE);
-
-                        while (clientCSV != null)
-                        {
-                            // Write the CSV line to the report
-                            streamWriter.WriteLine(clientCSV);
-
-                            Client adapted = adapter.CSVToClient(clientCSV);
-
-                            totalDebts += adapted.Debt;
-                            totalClients += 1;
-
-                            clientCSV = streamReader.ReadLine();
-                        }
-
-                        // Calculate average debt if there are clients
-                        decimal averageDebt = totalClients > 0 ? totalDebts / totalClients : 0;
-
-                        // Write the summary to the report
-                        streamWriter.WriteLine();
-                        streamWriter.WriteLine($"Total Clients: {totalClients}");
-                        streamWriter.WriteLine($"Total Debts: {totalDebts}");
-                        streamWriter.WriteLine($"Average Debt: {averageDebt}");
                     }
-                }
 
-                MessageBox.Show("Reporte generado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Calculate average debt if there are clients
+                    decimal averageDebt = totalClients > 0 ? totalDebts / totalClients : 0;
+
+                    // Write the summary to the report
+                    streamWriter.WriteLine();
+                    streamWriter.WriteLine($"Total Clients: {totalClients}");
+                    streamWriter.WriteLine($"Total Debts: {totalDebts}");
+                    streamWriter.WriteLine($"Average Debt: {averageDebt}");
+                }
             }
         }
 
