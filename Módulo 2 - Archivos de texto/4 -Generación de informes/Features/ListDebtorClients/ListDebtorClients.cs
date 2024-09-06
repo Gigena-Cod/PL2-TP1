@@ -1,20 +1,11 @@
 ﻿using Domain.Models;
 using Domain.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace _2_varias_columnas_de_datos.Feature.ListClients
+namespace _2_varias_columnas_de_datos.Features.ListDebtorClients
 {
-    public partial class ListClients : Form
+    public partial class ListDebtorClients : Form
     {
-        public ListClients()
+        public ListDebtorClients()
         {
             InitializeComponent();
         }
@@ -25,7 +16,7 @@ namespace _2_varias_columnas_de_datos.Feature.ListClients
         {
             dataGridViewClients.Rows.Clear();
 
-            var (clients, totalClients, totalDebt, averageDebt) = clientService.getClients();
+            var (clients, totalClients, totalDebt, averageDebt) = clientService.getDebtorClients();
 
 
             foreach (Client client in clients)
@@ -38,12 +29,6 @@ namespace _2_varias_columnas_de_datos.Feature.ListClients
             textBoxTotalClientes.Text = totalClients.ToString();
 
             textBoxAverage.Text = averageDebt.ToString("C");
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            clientService.postReportClients();
         }
     }
 }
