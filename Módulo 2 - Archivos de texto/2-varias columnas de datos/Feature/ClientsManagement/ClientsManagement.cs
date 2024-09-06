@@ -2,9 +2,9 @@ using _2_varias_columnas_de_datos.Feature.CreateClient;
 
 namespace _2_varias_columnas_de_datos
 {
-    public partial class Form1 : Form
+    public partial class ClientsManagement : Form
     {
-        public Form1()
+        public ClientsManagement()
         {
             InitializeComponent();
         }

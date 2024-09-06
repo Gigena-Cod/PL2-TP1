@@ -11,7 +11,7 @@ namespace _2_varias_columnas_de_datos
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new ClientsManagement());
         }
     }
 }

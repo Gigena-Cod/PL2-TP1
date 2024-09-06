@@ -1,6 +1,6 @@
 ﻿namespace _2_varias_columnas_de_datos
 {
-    partial class Form1
+    partial class ClientsManagement
     {
         /// <summary>
         ///  Required designer variable.
