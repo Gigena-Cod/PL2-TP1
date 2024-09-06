@@ -178,6 +178,7 @@
             Controls.Add(buttonSave);
             Controls.Add(dataGridViewClients);
             Name = "ListClients";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Listado de clientes";
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).EndInit();
             ResumeLayout(false);

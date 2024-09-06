@@ -178,6 +178,7 @@
             Controls.Add(buttonSave);
             Controls.Add(dataGridViewClients);
             Name = "ListDebtorClients";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Listado de clientes deudores";
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).EndInit();
             ResumeLayout(false);

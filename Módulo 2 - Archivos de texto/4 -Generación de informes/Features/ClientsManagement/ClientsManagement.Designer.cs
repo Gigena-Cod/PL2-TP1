@@ -58,13 +58,13 @@
             // acercaraToolStripMenuItem
             // 
             acercaraToolStripMenuItem.Name = "acercaraToolStripMenuItem";
-            acercaraToolStripMenuItem.Size = new Size(180, 22);
+            acercaraToolStripMenuItem.Size = new Size(126, 22);
             acercaraToolStripMenuItem.Text = "Acerca de";
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(126, 22);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -103,7 +103,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             Name = "ClientsManagement";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Administrador de clientes";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
