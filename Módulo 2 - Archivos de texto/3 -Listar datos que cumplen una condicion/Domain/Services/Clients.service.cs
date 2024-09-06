@@ -43,6 +43,45 @@ namespace Domain.Services
             }
         }
 
+        public (List<Client>, int, decimal, decimal) getDebtorClients()
+        {
+            string? clientCSV;
+
+            List<Client> clients = new();
+
+            decimal totalDebts = 0;
+
+            using (StreamReader streamReader = new StreamReader(filename, true))
+            {
+
+                clientCSV = streamReader.ReadLine();
+
+                while (clientCSV != null)
+                {
+                    Client adapted = adapter.CSVToClient(clientCSV);
+                    
+                    clientCSV = streamReader.ReadLine();
+
+                    if (adapted.Debt <= 0)
+                    {
+                        continue;
+                    }
+
+                    totalDebts += adapted.Debt;
+
+                    clients.Add(adapted);
+
+                }
+
+                int totalClients = clients.Count;
+
+                decimal averageDebt = totalDebts / clients.Count;
+
+
+                return (clients, totalClients, totalDebts, averageDebt);
+            }
+        }
+
         public void postClient(string code, string fullName, decimal debt, decimal creditLimit)
         {
             
