@@ -46,6 +46,9 @@ namespace _2_varias_columnas_de_datos.Feature.CreateClient
 
            ClearField();
 
+
+            MessageBox.Show("El cliente ha sido registrado exitosamente.",
+          "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void ClearField()
