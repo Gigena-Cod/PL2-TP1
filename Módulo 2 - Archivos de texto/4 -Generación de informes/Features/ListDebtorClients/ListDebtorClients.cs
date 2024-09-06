@@ -30,5 +30,13 @@ namespace _2_varias_columnas_de_datos.Features.ListDebtorClients
 
             textBoxAverage.Text = averageDebt.ToString("C");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            clientService.PostReportDebtorClients();
+
+            MessageBox.Show("Reporte generado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

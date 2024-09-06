@@ -41,6 +41,7 @@
             ColumnFullName = new DataGridViewTextBoxColumn();
             ColumnDebt = new DataGridViewTextBoxColumn();
             ColumnCredit = new DataGridViewTextBoxColumn();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
             SuspendLayout();
             // 
@@ -151,11 +152,22 @@
             ColumnCredit.HeaderText = "Limite de credito";
             ColumnCredit.Name = "ColumnCredit";
             // 
+            // button1
+            // 
+            button1.Location = new Point(298, 407);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 35);
+            button1.TabIndex = 35;
+            button1.Text = "Generar reporte";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // ListDebtorClients
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(573, 450);
+            Controls.Add(button1);
             Controls.Add(textBoxAverage);
             Controls.Add(label4);
             Controls.Add(textBoxDebts);
@@ -187,5 +199,6 @@
         private DataGridViewTextBoxColumn ColumnFullName;
         private DataGridViewTextBoxColumn ColumnDebt;
         private DataGridViewTextBoxColumn ColumnCredit;
+        private Button button1;
     }
 }

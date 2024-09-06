@@ -81,15 +81,13 @@ namespace Domain.Services
 
                         clientCSV = streamReader.ReadLine();
                     }
-
-                    // Calculate average debt if there are clients
+                     
                     decimal averageDebt = totalClients > 0 ? totalDebts / totalClients : 0;
-
-                    // Write the summary to the report
-                    streamWriter.WriteLine();
-                    streamWriter.WriteLine($"Total Clients: {totalClients}");
-                    streamWriter.WriteLine($"Total Debts: {totalDebts}");
-                    streamWriter.WriteLine($"Average Debt: {averageDebt}");
+ 
+                    streamWriter.WriteLine(BREAK_LINE);
+                    streamWriter.WriteLine($"Total Clients{SEPARATOR}{totalClients}"); 
+                    streamWriter.WriteLine($"Total Debts{SEPARATOR}{totalDebts}");
+                    streamWriter.WriteLine($"Average Debt{SEPARATOR}{averageDebt}");
                 }
             }
         }
@@ -130,6 +128,52 @@ namespace Domain.Services
 
 
                 return (clients, totalClients, totalDebts, averageDebt);
+            }
+        }
+
+        public void PostReportDebtorClients()
+        {
+            string? clientCSV;
+
+            decimal totalClients = 0;
+            decimal totalDebts = 0;
+
+            using (StreamReader streamReader = new StreamReader(filename, Encoding.UTF8))
+            {
+                using (StreamWriter streamWriter = new StreamWriter("ReporteClientesDeudores.csv", false, Encoding.UTF8))
+                {
+                    clientCSV = streamReader.ReadLine();
+
+                    string title = $"Reporte de clientes deudores{SEPARATOR}{SEPARATOR}{SEPARATOR}";
+                    streamWriter.WriteLine(title);
+                    streamWriter.WriteLine(BREAK_LINE);
+                    streamWriter.WriteLine(COLUMNS_LINE);
+
+                    while (clientCSV != null)
+                    {
+                        Client adapted = adapter.CSVToClient(clientCSV);
+
+                        clientCSV = streamReader.ReadLine();
+
+                        if (adapted.Debt <= 0)
+                        {
+                            continue;
+                        } 
+                        streamWriter.WriteLine(clientCSV);
+
+                        totalDebts += adapted.Debt;
+
+                        totalClients += 1;
+                         
+                    }
+                     
+                    decimal averageDebt = totalClients > 0 ? totalDebts / totalClients : 0;
+                     
+                    streamWriter.WriteLine(BREAK_LINE);
+                    streamWriter.WriteLine($"Total Clients{SEPARATOR}{totalClients}");
+                    streamWriter.WriteLine($"Total Debts{SEPARATOR}{totalDebts}");
+                    streamWriter.WriteLine($"Average Debt{SEPARATOR}{averageDebt}");
+                }
             }
         }
 
