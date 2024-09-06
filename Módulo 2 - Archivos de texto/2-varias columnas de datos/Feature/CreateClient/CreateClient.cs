@@ -1,22 +1,10 @@
-﻿using Domain.Adapters;
-using Domain.Models;
-using Domain.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Domain.Services;
 
 namespace _2_varias_columnas_de_datos.Feature.CreateClient
 {
     public partial class CreateClient : Form
     {
         ClientsService service = new();
-        ClientAdapter adapter = new();
 
         public CreateClient()
         {
@@ -35,20 +23,14 @@ namespace _2_varias_columnas_de_datos.Feature.CreateClient
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Client newClient = new Client(textBoxCode.Text,
+           service.postClient(textBoxCode.Text,
                 textBoxName.Text,
                 Convert.ToDecimal(textBoxDebt.Text),
                 Convert.ToDecimal(textBoxLimitCredit.Text));
 
-           dynamic adaptedClient = adapter.ClientToCSV(newClient);
-
-           service.postClient(adaptedClient);
-
            ClearField();
 
-
-            MessageBox.Show("El cliente ha sido registrado exitosamente.",
-          "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           MessageBox.Show("El cliente ha sido registrado exitosamente","Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void ClearField()

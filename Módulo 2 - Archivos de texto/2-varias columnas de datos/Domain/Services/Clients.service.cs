@@ -1,5 +1,6 @@
 ﻿using Domain.Adapters;
 using Domain.Models;
+using System.Windows.Forms;
 
 namespace Domain.Services
 {
@@ -34,14 +35,17 @@ namespace Domain.Services
             }
         }
 
-        public void postClient(string client)
+        public void postClient(string code, string fullName, decimal debt, decimal creditLimit)
         {
-            StreamWriter streamWriter = new StreamWriter(filename, true);
             
-            streamWriter.WriteLine(client);
+            using (StreamWriter streamWriter = new StreamWriter(filename, true))
+            {
+                Client newClient = new Client(code,fullName,debt,creditLimit);
 
-            streamWriter.Close();
-            streamWriter.Dispose();
+                dynamic adaptedClient = adapter.ClientToCSV(newClient);
+
+                streamWriter.WriteLine(adaptedClient);
+            }
         }
     }
 }
