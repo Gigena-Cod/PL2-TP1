@@ -41,6 +41,7 @@
             ColumnDebt = new DataGridViewTextBoxColumn();
             ColumnCredit = new DataGridViewTextBoxColumn();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClients).BeginInit();
             SuspendLayout();
             // 
@@ -151,11 +152,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(225, 406);
+            button2.Name = "button2";
+            button2.Size = new Size(162, 30);
+            button2.TabIndex = 35;
+            button2.Text = "Generar reporte ordenado";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // ListClients
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(557, 448);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBoxAverage);
             Controls.Add(label4);
@@ -189,5 +201,6 @@
         private DataGridViewTextBoxColumn ColumnDebt;
         private DataGridViewTextBoxColumn ColumnCredit;
         private Button button1;
+        private Button button2;
     }
 }

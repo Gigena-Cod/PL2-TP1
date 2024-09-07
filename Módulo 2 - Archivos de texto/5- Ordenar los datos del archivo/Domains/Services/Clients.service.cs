@@ -188,5 +188,58 @@ namespace Domain.Services
                 streamWriter.WriteLine(adaptedClient);
             }
         }
+
+        public void getClientsSortByDebts()
+        {
+            List<Client> clients = new ();
+
+            string? clientCSV;
+
+            using (StreamReader streamReader = new StreamReader(filename) ){
+
+                clientCSV = streamReader.ReadLine();
+
+                while (clientCSV != null) {
+
+                    Client adaptedClient = adapter.CSVToClient(clientCSV);
+                    
+                    clients.Add(adaptedClient);
+
+                    clientCSV = streamReader.ReadLine();
+                }
+
+            }
+            
+            // Sort List
+            for (int j=0; j < clients.Count - 1; j++) {
+
+                for (int i=0; i < clients.Count -1 ;i++) {
+
+                    if (Convert.ToDecimal(clients[i].Debt) > Convert.ToDecimal(clients[i + 1].Debt))
+                    {
+                        Client aux = clients[i];
+                        clients[i]= clients[i+1];
+                        clients[i + 1] = aux;
+                    }
+
+                }
+
+            }
+
+            using (StreamWriter streamWriter = new StreamWriter("ReporteOrdenadoClientes.csv", false, Encoding.UTF8))
+            {
+                streamWriter.WriteLine("Clientes ordenados por deuda");
+                streamWriter.WriteLine(BREAK_LINE);
+
+                foreach (Client client in clients) { 
+                    
+                    string adaptedClient = adapter.ClientToCSV(client);
+                    streamWriter.WriteLine(adaptedClient);
+                }
+
+            }
+        }
+
+
     }
 }

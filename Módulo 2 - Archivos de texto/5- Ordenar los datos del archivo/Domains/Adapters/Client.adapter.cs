@@ -32,6 +32,6 @@ namespace Domain.Adapters
                 Convert.ToDecimal(properties[LIMIT_CREDIT_INDEX])
             );
         }
-
+      
     }
 }
