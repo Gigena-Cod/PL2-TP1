@@ -1,4 +1,4 @@
-﻿namespace _5__Ordenar_los_datos_del_archivo
+﻿namespace Features
 {
     partial class ClientsManagement
     {
@@ -104,7 +104,9 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "ClientsManagement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrador de clientes";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

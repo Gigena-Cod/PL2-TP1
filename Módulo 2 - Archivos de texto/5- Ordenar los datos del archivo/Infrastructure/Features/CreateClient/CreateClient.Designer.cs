@@ -152,6 +152,7 @@
             Controls.Add(label1);
             Controls.Add(textBoxCode);
             Name = "CreateClient";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Crear cliente";
             ResumeLayout(false);
             PerformLayout();
