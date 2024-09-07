@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\Features\ListClients\" />
-    <Folder Include="Infrastructure\Features\CreateClient\" />
     <Folder Include="Infrastructure\Features\ListDebtorClients\" />
   </ItemGroup>
 

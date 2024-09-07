@@ -52,5 +52,9 @@ namespace _4__Generación_de_informes
             listDebtorClients.ShowDialog();
         }
 
+        private void ClientsManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
