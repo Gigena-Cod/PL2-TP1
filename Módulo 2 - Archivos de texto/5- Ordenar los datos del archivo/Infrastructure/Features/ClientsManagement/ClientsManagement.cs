@@ -28,7 +28,8 @@ namespace Features
 
         private void verTofdosLosClientesDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO: List all client debtor
+            ListDebtorClients listDebtorClients = new ListDebtorClients();
+            listDebtorClients.ShowDialog();
         }
     }
 }
