@@ -6,5 +6,25 @@ namespace _5__Ordenar_los_datos_del_archivo
         {
             InitializeComponent();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //TODO:Open popup create Cliente
+        }
+
+        private void verTodosLosClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //TODO: List all client
+        }
+
+        private void verTofdosLosClientesDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //TODO: List all client debtor
+        }
     }
 }
