@@ -158,7 +158,7 @@
             button2.Name = "button2";
             button2.Size = new Size(162, 30);
             button2.TabIndex = 35;
-            button2.Text = "Generar reporte ordenado";
+            button2.Text = "Ordenar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

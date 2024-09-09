@@ -176,10 +176,9 @@ namespace Domain.Services
             }
         }
 
-        public void postClient(string code, string fullName, decimal debt, decimal creditLimit)
-        {
+        public void postClient(int code, string fullName, decimal debt, decimal creditLimit){
 
-            using (StreamWriter streamWriter = new StreamWriter(filename, true))
+            using (StreamWriter streamWriter = new StreamWriter(filename, true,Encoding.UTF8))
             {
                 Client newClient = new Client(code, fullName, debt, creditLimit);
 
@@ -189,7 +188,7 @@ namespace Domain.Services
             }
         }
 
-        public void getClientsSortByDebts()
+        public void postClientsSortByCode()
         {
             List<Client> clients = new ();
 
@@ -215,7 +214,7 @@ namespace Domain.Services
 
                 for (int i=0; i < clients.Count -1 ;i++) {
 
-                    if (Convert.ToDecimal(clients[i].Debt) > Convert.ToDecimal(clients[i + 1].Debt))
+                    if (clients[i].Code > clients[i + 1].Code)
                     {
                         Client aux = clients[i];
                         clients[i]= clients[i+1];
@@ -226,11 +225,9 @@ namespace Domain.Services
 
             }
 
-            using (StreamWriter streamWriter = new StreamWriter("ReporteOrdenadoClientes.csv", false, Encoding.UTF8))
+            using (StreamWriter streamWriter = new StreamWriter(filename, false, Encoding.UTF8))
             {
-                streamWriter.WriteLine("Clientes ordenados por deuda");
-                streamWriter.WriteLine(BREAK_LINE);
-
+               
                 foreach (Client client in clients) { 
                     
                     string adaptedClient = adapter.ClientToCSV(client);
@@ -239,7 +236,5 @@ namespace Domain.Services
 
             }
         }
-
-
     }
 }

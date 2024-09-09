@@ -26,7 +26,7 @@ namespace Domain.Adapters
             }
 
             return new Client(
-                properties[CODE_INDEX],
+                Convert.ToInt32(properties[CODE_INDEX]),
                 properties[FULL_NAME_INDEX],
                 Convert.ToDecimal(properties[DEBT_INDEX]),
                 Convert.ToDecimal(properties[LIMIT_CREDIT_INDEX])

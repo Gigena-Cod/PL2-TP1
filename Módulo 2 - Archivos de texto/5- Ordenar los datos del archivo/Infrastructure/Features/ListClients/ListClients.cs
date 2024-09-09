@@ -14,6 +14,26 @@ namespace Features
 
         private void ListClients_Load(object sender, EventArgs e)
         {
+            loadClientsToDataGridView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            service.PostReportClients();
+
+            MessageBox.Show("Reporte generado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        { 
+            service.postClientsSortByCode();
+
+            loadClientsToDataGridView();
+
+        }
+
+        private void loadClientsToDataGridView()
+        {
             dataGridViewClients.Rows.Clear();
 
             var (clients, totalClients, totalDebt, averageDebt) = service.getClients();
@@ -29,21 +49,6 @@ namespace Features
             textBoxTotalClientes.Text = totalClients.ToString();
 
             textBoxAverage.Text = averageDebt.ToString("C");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            service.PostReportClients();
-
-            MessageBox.Show("Reporte generado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        { 
-
-            service.getClientsSortByDebts();
-
-            MessageBox.Show("Reporte generado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

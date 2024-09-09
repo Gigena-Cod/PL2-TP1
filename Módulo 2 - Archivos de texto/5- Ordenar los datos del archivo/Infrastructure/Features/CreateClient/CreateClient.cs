@@ -28,7 +28,8 @@ namespace Features
         private void buttonSave_Click(object sender, EventArgs e)
         {
 
-            service.postClient(textBoxCode.Text,
+            service.postClient(
+                 Convert.ToInt16(textBoxCode.Text),
                   textBoxName.Text,
                   Convert.ToDecimal(textBoxDebt.Text),
                   Convert.ToDecimal(textBoxLimitCredit.Text));
