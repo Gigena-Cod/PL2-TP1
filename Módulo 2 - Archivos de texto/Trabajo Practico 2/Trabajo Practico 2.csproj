@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Models\" />
     <Folder Include="Domain\Adapters\" />
     <Folder Include="Domain\Services\" />
     <Folder Include="Infrastructure\Features\" />
