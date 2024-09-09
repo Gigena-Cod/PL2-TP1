@@ -1,7 +1,9 @@
 ﻿namespace Infrastructure.Utils
 {
-    public static class Utils
+    public static class ArticlesUtils
     {
+        public const string ArticlesFilename = "DB_ARTICULOS.csv";
+
         public const string CSV_SEPARATOR = ";";
 
         public const int CODE_POSITION = 0;

@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Domain.Services;
+using Infrastructure.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace Infrastructure.Features
 
         ArticlesService articlesService = new ArticlesService();
 
+        CategoriesService categoriesService = new CategoriesService();
+
         private void buttonExportArticles_Click(object sender, EventArgs e)
         {
             //TODO: Export artciles
@@ -29,13 +32,53 @@ namespace Infrastructure.Features
         private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             //TODO: Selected category
+            loadArticles(comboBoxCategories.Text);
         }
 
         private void ListArticles_Load(object sender, EventArgs e)
         {
+            loadCategories();
+
+            loadArticles(comboBoxCategories.Text);           
+
+        }
+
+        private void loadCategories()
+        {
+            this.comboBoxCategories.Items.Clear();
+
+            List<Category> categories = categoriesService.GetCategories();
+
+            loadCategoriesComboBox(categories);
+        }
+
+        private void loadCategoriesComboBox(List<Category> categories)
+        {             
+
+            this.comboBoxCategories.Items.Add(CategoryUtils.CATEGORY_ALL_TEXT);
+
+            this.comboBoxCategories.SelectedIndex = CategoryUtils.CATEGORY_ALL_INDEX;
+
+            foreach (Category category in categories)
+            {
+                this.comboBoxCategories.Items.Add(category.Code);
+            }
+        }
+
+        private void loadArticles(string selectedCategory)
+        {
+            var (articles, total, amount) = articlesService.GetArticles(selectedCategory);
+
+            loadArticlesDataGridView(articles);
+
+            labelResults.Text = $"{total} resultados";
+
+            labelTotalAmounts.Text = amount.ToString("C");
+        }
+
+        private void loadArticlesDataGridView(List<Article> articles)
+        {
             this.dataGridViewArticles.Rows.Clear();
-            
-            var (articles,total,amount) = articlesService.GetArticles();
 
             foreach (Article article in articles)
             {
@@ -43,11 +86,8 @@ namespace Infrastructure.Features
 
                 dataGridViewArticles.Rows.Add(article.Code, article.Description, article.Price.ToString("C"), article.Stock, priceInStock.ToString("C"));
             }
-
-            labelResults.Text = $"{total} resultados";
-
-            labelTotalAmounts.Text = amount.ToString("C");
-
         }
+
+
     }
 }

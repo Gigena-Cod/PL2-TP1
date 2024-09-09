@@ -8,17 +8,17 @@ namespace Domain.Adapters
 
         public Article? TransformCSVToArticle(string articleCSV)
         {
-            string[] propertiesArticle = articleCSV.Split(Utils.CSV_SEPARATOR);
+            string[] propertiesArticle = articleCSV.Split(ArticlesUtils.CSV_SEPARATOR);
 
             if (propertiesArticle.Length !=5) {
                 return null;
             }
 
-            string code = propertiesArticle[Utils.CODE_POSITION];
-            string description = propertiesArticle[Utils.DESCRIPTION_POSITION];
-            decimal price = Convert.ToDecimal(propertiesArticle[Utils.PRICE_POSITION]);
-            string category = propertiesArticle[Utils.CATEGORY_POSITION];
-            int stock = Convert.ToInt32(propertiesArticle[Utils.STOCK_POSITION]);
+            string code = propertiesArticle[ArticlesUtils.CODE_POSITION];
+            string description = propertiesArticle[ArticlesUtils.DESCRIPTION_POSITION];
+            decimal price = Convert.ToDecimal(propertiesArticle[ArticlesUtils.PRICE_POSITION]);
+            string category = propertiesArticle[ArticlesUtils.CATEGORY_POSITION];
+            int stock = Convert.ToInt32(propertiesArticle[ArticlesUtils.STOCK_POSITION]);
 
             Article newArticle = new (code,description,price,category,stock);
 

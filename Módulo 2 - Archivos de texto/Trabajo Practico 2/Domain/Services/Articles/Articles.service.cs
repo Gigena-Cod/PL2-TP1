@@ -1,16 +1,15 @@
 ﻿using Domain.Adapters;
 using Domain.Models;
-using System.Collections.Generic;
+using Infrastructure.Utils;
 
 namespace Domain.Services
 {
     internal class ArticlesService
     {
         ArticlesAdapter adapter = new();
+         
 
-        private string ArticlesFilename = "DB_ARTICULOS.csv";
-
-        public (List<Article>,int totalArticles,decimal totalAmounts) GetArticles()
+        public (List<Article>,int totalArticles,decimal totalAmounts) GetArticles(string? category)
         {
 
             List<Article> articles = new List<Article>();
@@ -19,7 +18,7 @@ namespace Domain.Services
 
             decimal amount = 0;
 
-            using (StreamReader streamReader = new(ArticlesFilename))
+            using (StreamReader streamReader = new(ArticlesUtils.ArticlesFilename))
             {
                 string? article = streamReader.ReadLine();
 
@@ -29,7 +28,7 @@ namespace Domain.Services
 
                     article = streamReader.ReadLine();
 
-                    if(adaptedArticle != null)
+                    if(adaptedArticle != null && (category==CategoryUtils.CATEGORY_ALL_TEXT || category == adaptedArticle.Category))
                     {
                         amount += adaptedArticle.Price * Convert.ToDecimal(adaptedArticle.Stock);
                         total += 1;
