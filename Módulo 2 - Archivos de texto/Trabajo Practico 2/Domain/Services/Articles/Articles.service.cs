@@ -1,6 +1,7 @@
 ﻿using Domain.Adapters;
 using Domain.Models;
 using Infrastructure.Utils;
+using System.Text;
 
 namespace Domain.Services
 {
@@ -40,6 +41,26 @@ namespace Domain.Services
             }
 
              return (articles,total,amount);
+        }
+    
+        public void PostGenerateReport(List<Article> articles)
+        {
+
+            using(StreamWriter streamWriter = new(ArticlesUtils.ArticlesReportFilename, false, Encoding.UTF8))
+            {
+                streamWriter.WriteLine("Reporte de Articulos");
+                streamWriter.WriteLine("");
+
+                streamWriter.WriteLine("Codigo;Descripcion;Rubro;Precio;Stock");
+
+                foreach (Article article in articles)
+                {
+                    string adaptedArticle = adapter.TransformArticleToCSV(article);
+                    streamWriter.WriteLine(adaptedArticle);
+                }
+            }
+
+
         }
     }
 }

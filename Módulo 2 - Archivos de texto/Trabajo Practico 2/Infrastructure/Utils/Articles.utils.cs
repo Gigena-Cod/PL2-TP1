@@ -4,6 +4,8 @@
     {
         public const string ArticlesFilename = "DB_ARTICULOS.csv";
 
+        public const string ArticlesReportFilename = "Report_Artciles.csv";
+
         public const string CSV_SEPARATOR = ";";
 
         public const int CODE_POSITION = 0;

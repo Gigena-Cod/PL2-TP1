@@ -24,6 +24,14 @@ namespace Domain.Adapters
 
             return newArticle;
         }
+
+        public string TransformArticleToCSV(Article article)
+        { 
+
+            string newArticle = $"{article.Code}{ArticlesUtils.CSV_SEPARATOR}{article.Description}{ArticlesUtils.CSV_SEPARATOR}{article.Category}{ArticlesUtils.CSV_SEPARATOR}{article.Price}{ArticlesUtils.CSV_SEPARATOR}{article.Stock}";
+
+            return newArticle;
+        }
     }
    
 }

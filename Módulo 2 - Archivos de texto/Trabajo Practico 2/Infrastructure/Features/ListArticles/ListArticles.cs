@@ -19,6 +19,7 @@ namespace Infrastructure.Features
         {
             InitializeComponent();
         }
+        List<Article> filteredArticles = new List<Article>();
 
         ArticlesService articlesService = new ArticlesService();
 
@@ -27,6 +28,9 @@ namespace Infrastructure.Features
         private void buttonExportArticles_Click(object sender, EventArgs e)
         {
             //TODO: Export artciles
+            articlesService.PostGenerateReport(filteredArticles);
+
+            MessageBox.Show("Reporte de articulos creado correctamente", "Reporte creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,6 +74,8 @@ namespace Infrastructure.Features
             var (articles, total, amount) = articlesService.GetArticles(selectedCategory);
 
             loadArticlesDataGridView(articles);
+
+            filteredArticles = articles;
 
             labelResults.Text = $"{total} resultados";
 
