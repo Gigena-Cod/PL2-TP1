@@ -106,6 +106,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrador de clientes";
             WindowState = FormWindowState.Maximized;
+            Load += ClientsManagement_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

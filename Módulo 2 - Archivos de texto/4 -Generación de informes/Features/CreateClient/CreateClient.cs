@@ -1,6 +1,6 @@
 ﻿using Domain.Services;
 
-namespace _2_varias_columnas_de_datos.Feature.CreateClient
+namespace Features
 {
     public partial class CreateClient : Form
     {
