@@ -35,12 +35,18 @@ namespace Infrastructure.Features
         {
             this.dataGridViewArticles.Rows.Clear();
             
-            List<Article> articles = articlesService.GetArticles();
+            var (articles,total,amount) = articlesService.GetArticles();
 
             foreach (Article article in articles)
             {
-                dataGridViewArticles.Rows.Add(article.Code, article.Description, article.Price, article.Stock, article.Code);
+                decimal priceInStock = article.Stock * article.Price;
+
+                dataGridViewArticles.Rows.Add(article.Code, article.Description, article.Price.ToString("C"), article.Stock, priceInStock.ToString("C"));
             }
+
+            labelResults.Text = $"{total} resultados";
+
+            labelTotalAmounts.Text = amount.ToString("C");
 
         }
     }

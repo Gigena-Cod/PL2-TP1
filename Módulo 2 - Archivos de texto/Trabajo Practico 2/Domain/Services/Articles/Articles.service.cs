@@ -10,10 +10,14 @@ namespace Domain.Services
 
         private string ArticlesFilename = "DB_ARTICULOS.csv";
 
-        public List<Article> GetArticles()
+        public (List<Article>,int totalArticles,decimal totalAmounts) GetArticles()
         {
 
             List<Article> articles = new List<Article>();
+            
+            int total = 0;
+
+            decimal amount = 0;
 
             using (StreamReader streamReader = new(ArticlesFilename))
             {
@@ -27,6 +31,8 @@ namespace Domain.Services
 
                     if(adaptedArticle != null)
                     {
+                        amount += adaptedArticle.Price * Convert.ToDecimal(adaptedArticle.Stock);
+                        total += 1;
                         articles.Add(adaptedArticle);
                     } 
 
@@ -34,7 +40,7 @@ namespace Domain.Services
 
             }
 
-             return articles;
+             return (articles,total,amount);
         }
     }
 }

@@ -39,6 +39,9 @@
             ColumnStock = new DataGridViewTextBoxColumn();
             ColumnAmountStock = new DataGridViewTextBoxColumn();
             buttonExportArticles = new Button();
+            labelResults = new Label();
+            label3 = new Label();
+            labelTotalAmounts = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewArticles).BeginInit();
             SuspendLayout();
             // 
@@ -74,40 +77,43 @@
             // 
             dataGridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewArticles.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnDescription, ColumnPrice, ColumnStock, ColumnAmountStock });
-            dataGridViewArticles.Location = new Point(22, 163);
+            dataGridViewArticles.Location = new Point(24, 171);
             dataGridViewArticles.Name = "dataGridViewArticles";
-            dataGridViewArticles.Size = new Size(579, 264);
+            dataGridViewArticles.Size = new Size(579, 291);
             dataGridViewArticles.TabIndex = 3;
             // 
             // ColumnCode
             // 
             ColumnCode.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnCode.FillWeight = 24.5901623F;
             ColumnCode.HeaderText = "Código";
             ColumnCode.Name = "ColumnCode";
             // 
             // ColumnDescription
             // 
             ColumnDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnDescription.FillWeight = 24.5901623F;
             ColumnDescription.HeaderText = "Descripción";
             ColumnDescription.Name = "ColumnDescription";
             // 
             // ColumnPrice
             // 
-            ColumnPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColumnPrice.HeaderText = "Costo";
             ColumnPrice.Name = "ColumnPrice";
+            ColumnPrice.Width = 80;
             // 
             // ColumnStock
             // 
-            ColumnStock.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColumnStock.HeaderText = "Stock";
             ColumnStock.Name = "ColumnStock";
+            ColumnStock.Width = 56;
             // 
             // ColumnAmountStock
             // 
-            ColumnAmountStock.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnAmountStock.FillWeight = 250.819672F;
             ColumnAmountStock.HeaderText = "Valor en Stock";
             ColumnAmountStock.Name = "ColumnAmountStock";
+            ColumnAmountStock.Width = 80;
             // 
             // buttonExportArticles
             // 
@@ -119,11 +125,39 @@
             buttonExportArticles.UseVisualStyleBackColor = true;
             buttonExportArticles.Click += buttonExportArticles_Click;
             // 
+            // labelResults
+            // 
+            labelResults.AutoSize = true;
+            labelResults.Location = new Point(223, 124);
+            labelResults.Name = "labelResults";
+            labelResults.Size = new Size(0, 15);
+            labelResults.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(493, 478);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Total:";
+            // 
+            // labelTotalAmounts
+            // 
+            labelTotalAmounts.AutoSize = true;
+            labelTotalAmounts.Location = new Point(531, 478);
+            labelTotalAmounts.Name = "labelTotalAmounts";
+            labelTotalAmounts.Size = new Size(0, 15);
+            labelTotalAmounts.TabIndex = 8;
+            // 
             // ListArticles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(615, 450);
+            ClientSize = new Size(615, 524);
+            Controls.Add(labelTotalAmounts);
+            Controls.Add(label3);
+            Controls.Add(labelResults);
             Controls.Add(buttonExportArticles);
             Controls.Add(dataGridViewArticles);
             Controls.Add(comboBoxCategories);
@@ -144,11 +178,14 @@
         private Label label2;
         private ComboBox comboBoxCategories;
         private DataGridView dataGridViewArticles;
+        private Button buttonExportArticles;
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnDescription;
         private DataGridViewTextBoxColumn ColumnPrice;
         private DataGridViewTextBoxColumn ColumnStock;
         private DataGridViewTextBoxColumn ColumnAmountStock;
-        private Button buttonExportArticles;
+        private Label labelResults;
+        private Label label3;
+        private Label labelTotalAmounts;
     }
 }
