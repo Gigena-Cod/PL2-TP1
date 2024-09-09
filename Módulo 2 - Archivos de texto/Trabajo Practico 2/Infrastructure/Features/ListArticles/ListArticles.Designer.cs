@@ -32,23 +32,23 @@
             label1 = new Label();
             label2 = new Label();
             comboBoxCategories = new ComboBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewArticles = new DataGridView();
             ColumnCode = new DataGridViewTextBoxColumn();
             ColumnDescription = new DataGridViewTextBoxColumn();
             ColumnPrice = new DataGridViewTextBoxColumn();
             ColumnStock = new DataGridViewTextBoxColumn();
             ColumnAmountStock = new DataGridViewTextBoxColumn();
             buttonExportArticles = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArticles).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(21, 21);
-            label1.MaximumSize = new Size(500, 0);
+            label1.MaximumSize = new Size(600, 0);
             label1.Name = "label1";
-            label1.Size = new Size(482, 45);
+            label1.Size = new Size(580, 45);
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
             // 
@@ -70,14 +70,14 @@
             comboBoxCategories.TabIndex = 2;
             comboBoxCategories.SelectedIndexChanged += comboBoxCategories_SelectedIndexChanged;
             // 
-            // dataGridView1
+            // dataGridViewArticles
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnDescription, ColumnPrice, ColumnStock, ColumnAmountStock });
-            dataGridView1.Location = new Point(22, 163);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(469, 264);
-            dataGridView1.TabIndex = 3;
+            dataGridViewArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewArticles.Columns.AddRange(new DataGridViewColumn[] { ColumnCode, ColumnDescription, ColumnPrice, ColumnStock, ColumnAmountStock });
+            dataGridViewArticles.Location = new Point(22, 163);
+            dataGridViewArticles.Name = "dataGridViewArticles";
+            dataGridViewArticles.Size = new Size(579, 264);
+            dataGridViewArticles.TabIndex = 3;
             // 
             // ColumnCode
             // 
@@ -111,7 +111,7 @@
             // 
             // buttonExportArticles
             // 
-            buttonExportArticles.Location = new Point(383, 115);
+            buttonExportArticles.Location = new Point(493, 121);
             buttonExportArticles.Name = "buttonExportArticles";
             buttonExportArticles.Size = new Size(108, 28);
             buttonExportArticles.TabIndex = 4;
@@ -123,16 +123,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(514, 450);
+            ClientSize = new Size(615, 450);
             Controls.Add(buttonExportArticles);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewArticles);
             Controls.Add(comboBoxCategories);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "ListArticles";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestión de Artículos por Rubro";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += ListArticles_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewArticles).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,7 +143,7 @@
         private Label label1;
         private Label label2;
         private ComboBox comboBoxCategories;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewArticles;
         private DataGridViewTextBoxColumn ColumnCode;
         private DataGridViewTextBoxColumn ColumnDescription;
         private DataGridViewTextBoxColumn ColumnPrice;

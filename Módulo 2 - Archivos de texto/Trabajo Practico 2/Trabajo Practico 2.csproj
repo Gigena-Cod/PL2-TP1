@@ -9,9 +9,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Domain\Adapters\" />
-    <Folder Include="Infrastructure\Utils\" />
-  </ItemGroup>
-
 </Project>
