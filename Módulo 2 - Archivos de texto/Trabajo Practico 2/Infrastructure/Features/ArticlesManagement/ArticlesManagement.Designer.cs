@@ -1,4 +1,4 @@
-﻿namespace Features
+﻿namespace Infrastructure.Features
 {
     partial class ArticlesManagement
     {
@@ -78,6 +78,7 @@
             lisToolStripMenuItem.Name = "lisToolStripMenuItem";
             lisToolStripMenuItem.Size = new Size(189, 22);
             lisToolStripMenuItem.Text = "Ver todos los articulos";
+            lisToolStripMenuItem.Click += lisToolStripMenuItem_Click;
             // 
             // ArticlesManagement
             // 

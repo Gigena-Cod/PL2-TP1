@@ -1,4 +1,4 @@
-namespace Features
+namespace Infrastructure.Features
 {
     public partial class ArticlesManagement : Form
     {
@@ -10,6 +10,12 @@ namespace Features
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListArticles listArticles = new ListArticles();
+            listArticles.ShowDialog();
         }
     }
 }
