@@ -1,3 +1,5 @@
+using Features;
+
 namespace Infrastructure.Features
 {
     public partial class ArticlesManagement : Form
@@ -16,6 +18,12 @@ namespace Infrastructure.Features
         {
             ListArticles listArticles = new ListArticles();
             listArticles.ShowDialog();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutMe aboutMe = new AboutMe();
+            aboutMe.ShowDialog();
         }
     }
 }
