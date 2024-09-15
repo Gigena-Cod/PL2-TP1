@@ -24,8 +24,8 @@ Este módulo se enfoca en trabajar con vectores conformados por tipos de datos d
 
 ### Módulo 2: Archivos de Texto y Procesamiento de Cadenas
 Este módulo trata sobre la manipulación de archivos de texto y el procesamiento de cadenas de caracteres. Los temas incluyen:
-- Declaración de archivos de texto.
-- Operaciones de apertura, cierre, lectura y escritura.
-- Carga de vectores con datos desde archivos.
-- Procesamiento de cadenas: longitud, conversión a mayúscula/minúscula, búsqueda en cadenas y extracción de partes.
+- **Declaración de archivos de texto**
+- **Operaciones de apertura, cierre, lectura y escritura**
+- **Carga de vectores con datos desde archivo**
+- **Procesamiento de cadenas: longitud, conversión a mayúscula/minúscula, búsqueda en cadenas y extracción de partes**
 
