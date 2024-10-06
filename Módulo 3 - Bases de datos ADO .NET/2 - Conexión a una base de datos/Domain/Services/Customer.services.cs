@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Infrastructure.Utils;
+using System.Data;
 
 namespace Domain
 {
@@ -16,7 +17,8 @@ namespace Domain
             try
             {
                 // Define la consulta SQL para obtener todos los usuarios de la tabla Users
-                string query = "SELECT * FROM [User]";
+                string query = $"SELECT * FROM [{UtilsRepository.ENTITY_USER}]";
+
                 List<Customer> users = new (); // Inicializa la lista de usuarios
 
                 // Llama al método ExecuteQuery del repositorio y obtiene el DataTable con los resultados

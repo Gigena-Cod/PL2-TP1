@@ -1,4 +1,4 @@
-﻿namespace _2___Conexión_a_una_base_de_datos.Infrastructure.Utils
+﻿namespace Infrastructure.Utils
 {
     public static class UtilsRepository
     {

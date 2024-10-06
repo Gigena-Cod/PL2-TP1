@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using System.Data.OleDb;
-using _2___Conexión_a_una_base_de_datos.Infrastructure.Utils;
+using Infrastructure.Utils;
 
 namespace Domain
 {
