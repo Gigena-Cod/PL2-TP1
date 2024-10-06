@@ -25,5 +25,10 @@ namespace Infrastructure.Features
             AboutMe aboutMe = new AboutMe();
             aboutMe.ShowDialog();
         }
+
+        private void ArticlesManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
