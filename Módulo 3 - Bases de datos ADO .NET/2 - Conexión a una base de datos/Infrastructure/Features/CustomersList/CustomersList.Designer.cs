@@ -31,17 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomersList));
             dataGridViewCustomers = new DataGridView();
             ColumnId = new DataGridViewTextBoxColumn();
-            ColumnEmail = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnLastName = new DataGridViewTextBoxColumn();
+            ColumnEmail = new DataGridViewTextBoxColumn();
+            ColumnDebt = new DataGridViewTextBoxColumn();
             label2 = new Label();
+            labelTotalCustomers = new Label();
+            labelTotalDebts = new Label();
+            labelAverageDebts = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCustomers).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewCustomers
             // 
             dataGridViewCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCustomers.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnEmail, ColumnName, ColumnLastName });
+            dataGridViewCustomers.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnName, ColumnLastName, ColumnEmail, ColumnDebt });
             dataGridViewCustomers.Location = new Point(12, 101);
             dataGridViewCustomers.Name = "dataGridViewCustomers";
             dataGridViewCustomers.Size = new Size(540, 337);
@@ -49,27 +53,37 @@
             // 
             // ColumnId
             // 
-            ColumnId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnId.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ColumnId.FillWeight = 225.3807F;
             ColumnId.HeaderText = "Id";
             ColumnId.Name = "ColumnId";
-            // 
-            // ColumnEmail
-            // 
-            ColumnEmail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ColumnEmail.HeaderText = "Email";
-            ColumnEmail.Name = "ColumnEmail";
+            ColumnId.Width = 30;
             // 
             // ColumnName
             // 
-            ColumnName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnName.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ColumnName.FillWeight = 58.2064323F;
             ColumnName.HeaderText = "Nombre";
             ColumnName.Name = "ColumnName";
             // 
             // ColumnLastName
             // 
-            ColumnLastName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnLastName.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ColumnLastName.FillWeight = 58.2064323F;
             ColumnLastName.HeaderText = "Apellido";
             ColumnLastName.Name = "ColumnLastName";
+            // 
+            // ColumnEmail
+            // 
+            ColumnEmail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnEmail.FillWeight = 58.2064323F;
+            ColumnEmail.HeaderText = "Email";
+            ColumnEmail.Name = "ColumnEmail";
+            // 
+            // ColumnDebt
+            // 
+            ColumnDebt.HeaderText = "Deuda";
+            ColumnDebt.Name = "ColumnDebt";
             // 
             // label2
             // 
@@ -81,14 +95,48 @@
             label2.TabIndex = 2;
             label2.Text = resources.GetString("label2.Text");
             // 
+            // labelTotalCustomers
+            // 
+            labelTotalCustomers.AutoSize = true;
+            labelTotalCustomers.Location = new Point(12, 74);
+            labelTotalCustomers.MaximumSize = new Size(550, 0);
+            labelTotalCustomers.Name = "labelTotalCustomers";
+            labelTotalCustomers.Size = new Size(58, 15);
+            labelTotalCustomers.TabIndex = 3;
+            labelTotalCustomers.Text = "0 Clientes";
+            // 
+            // labelTotalDebts
+            // 
+            labelTotalDebts.AutoSize = true;
+            labelTotalDebts.Location = new Point(130, 74);
+            labelTotalDebts.MaximumSize = new Size(550, 0);
+            labelTotalDebts.Name = "labelTotalDebts";
+            labelTotalDebts.Size = new Size(87, 15);
+            labelTotalDebts.TabIndex = 4;
+            labelTotalDebts.Text = "Total de deuda:";
+            // 
+            // labelAverageDebts
+            // 
+            labelAverageDebts.AutoSize = true;
+            labelAverageDebts.Location = new Point(279, 74);
+            labelAverageDebts.MaximumSize = new Size(550, 0);
+            labelAverageDebts.Name = "labelAverageDebts";
+            labelAverageDebts.Size = new Size(114, 15);
+            labelAverageDebts.TabIndex = 5;
+            labelAverageDebts.Text = "Promedio de deuda:";
+            // 
             // CustomersList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(567, 450);
+            Controls.Add(labelAverageDebts);
+            Controls.Add(labelTotalDebts);
+            Controls.Add(labelTotalCustomers);
             Controls.Add(label2);
             Controls.Add(dataGridViewCustomers);
             Name = "CustomersList";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Listado de clientes";
             Load += CustomersList_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCustomers).EndInit();
@@ -101,8 +149,12 @@
         private DataGridView dataGridViewCustomers;
         private Label label2;
         private DataGridViewTextBoxColumn ColumnId;
-        private DataGridViewTextBoxColumn ColumnEmail;
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnLastName;
+        private DataGridViewTextBoxColumn ColumnEmail;
+        private DataGridViewTextBoxColumn ColumnDebt;
+        private Label labelTotalCustomers;
+        private Label labelTotalDebts;
+        private Label labelAverageDebts;
     }
 }

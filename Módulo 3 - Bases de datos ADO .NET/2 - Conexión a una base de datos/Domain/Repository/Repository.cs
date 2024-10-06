@@ -31,18 +31,18 @@ namespace Domain
 
             connection.Close();
         }
-
         /// <summary>
         /// Ejecuta una consulta SQL que devuelve datos, generalmente de tipo SELECT.
         /// </summary>
         /// <param name="query">Consulta SQL que se desea ejecutar.</param>
         /// <returns>
-        /// Un objeto <see cref="DataTable"/> que contiene los resultados de la consulta.
+        /// Una lista de listas de objetos, donde cada lista interna representa una fila de la consulta,
+        /// o null si no hay resultados.
         /// </returns>
         /// <exception cref="Exception">
         /// Lanza una excepción si ocurre un error al ejecutar la consulta o al abrir la conexión.
         /// </exception>
-        public DataTable ExecuteQuery(string query)
+        public List<List<object>>? ExecuteQuery(string query)
         {
             try
             {
@@ -50,26 +50,45 @@ namespace Domain
                 OpenConnection();
 
                 // Crea un comando para ejecutar la consulta SQL
-                OleDbCommand command = new OleDbCommand();
-                command.CommandText = query;
-
-                command.Connection = connection;
-
+                OleDbCommand command = new OleDbCommand(query, connection);
                 command.CommandType = CommandType.Text;
 
+                // Ejecuta la consulta y obtiene un lector de datos
+                OleDbDataReader reader = command.ExecuteReader();
 
-                // Usa un adaptador para llenar el DataTable con los resultados de la consulta
-                OleDbDataAdapter adapter = new OleDbDataAdapter(command);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
+                // Si no hay filas, devuelve null
+                if (!reader.HasRows) return null;
 
-                // Retorna el DataTable con los datos obtenidos
-                return dataTable;
+                // Lista para almacenar las filas de resultados
+                List<List<object>> rows = new List<List<object>>();
+                
+                // Lee cada fila del lector
+                while (reader.Read())
+                {
+
+                    // Lista para almacenar los valores de una fila
+                    List<object> row = new List<object>();
+
+                    if (reader.FieldCount == 0) continue;
+
+                    // Itera a través de todas las columnas de la fila
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        // Agrega el valor de la columna a la lista de la fila
+                        row.Add(reader.GetValue(i));
+                    } 
+                 
+                    // Agrega la fila a la lista de filas
+                    rows.Add(row);
+                }
+
+                // Devuelve la lista de filas
+                return rows;
             }
             catch (Exception ex)
             {
                 // Lanza una excepción si ocurre un error durante la ejecución
-                throw new Exception(ex.Message);
+                throw new Exception("Error al ejecutar la consulta: " + ex.Message);
             }
             finally
             {
