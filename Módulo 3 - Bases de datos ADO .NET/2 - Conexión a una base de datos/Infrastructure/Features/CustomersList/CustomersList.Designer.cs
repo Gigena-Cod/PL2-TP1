@@ -29,23 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomersList));
-            dataGridView1 = new DataGridView();
+            dataGridViewCustomers = new DataGridView();
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
             button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ColumnId = new DataGridViewTextBoxColumn();
+            ColumnEmail = new DataGridViewTextBoxColumn();
+            ColumnName = new DataGridViewTextBoxColumn();
+            ColumnLastName = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCustomers).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewCustomers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 157);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(733, 264);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += this.dataGridView1_CellContentClick;
+            dataGridViewCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCustomers.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnEmail, ColumnName, ColumnLastName });
+            dataGridViewCustomers.Location = new Point(12, 157);
+            dataGridViewCustomers.Name = "dataGridViewCustomers";
+            dataGridViewCustomers.Size = new Size(733, 264);
+            dataGridViewCustomers.TabIndex = 0;
             // 
             // label2
             // 
@@ -96,6 +100,30 @@
             button1.Text = "Generar reporte";
             button1.UseVisualStyleBackColor = true;
             // 
+            // ColumnId
+            // 
+            ColumnId.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnId.HeaderText = "Id";
+            ColumnId.Name = "ColumnId";
+            // 
+            // ColumnEmail
+            // 
+            ColumnEmail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnEmail.HeaderText = "Email";
+            ColumnEmail.Name = "ColumnEmail";
+            // 
+            // ColumnName
+            // 
+            ColumnName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnName.HeaderText = "Nombre";
+            ColumnName.Name = "ColumnName";
+            // 
+            // ColumnLastName
+            // 
+            ColumnLastName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColumnLastName.HeaderText = "Apellido";
+            ColumnLastName.Name = "ColumnLastName";
+            // 
             // CustomersList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -106,21 +134,26 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewCustomers);
             Name = "CustomersList";
             Text = "Listado de clientes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += CustomersList_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewCustomers;
         private Label label2;
         private Label label1;
         private Label label3;
         private Label label4;
         private Button button1;
+        private DataGridViewTextBoxColumn ColumnId;
+        private DataGridViewTextBoxColumn ColumnEmail;
+        private DataGridViewTextBoxColumn ColumnName;
+        private DataGridViewTextBoxColumn ColumnLastName;
     }
 }
