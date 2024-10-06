@@ -18,5 +18,11 @@ namespace Infrastructure.Features
 
             aboutMe.ShowDialog();
         }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomersList customersList = new CustomersList();
+            customersList.ShowDialog();
+        }
     }
 }

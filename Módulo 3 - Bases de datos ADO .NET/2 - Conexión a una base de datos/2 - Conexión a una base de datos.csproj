@@ -10,8 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Utils\" />
+    <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

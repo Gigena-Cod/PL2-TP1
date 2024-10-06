@@ -32,12 +32,14 @@
             sistemaToolStripMenuItem = new ToolStripMenuItem();
             acercaDeToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
+            verToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, clientesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(804, 24);
@@ -65,6 +67,20 @@
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
+            // clientesToolStripMenuItem
+            // 
+            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { verToolStripMenuItem });
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(61, 20);
+            clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // verToolStripMenuItem
+            // 
+            verToolStripMenuItem.Name = "verToolStripMenuItem";
+            verToolStripMenuItem.Size = new Size(184, 22);
+            verToolStripMenuItem.Text = "Ver todos los clientes";
+            verToolStripMenuItem.Click += verToolStripMenuItem_Click;
+            // 
             // CustomerManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -88,5 +104,7 @@
         private ToolStripMenuItem sistemaToolStripMenuItem;
         private ToolStripMenuItem acercaDeToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem verToolStripMenuItem;
     }
 }
