@@ -44,7 +44,7 @@ namespace Infrastructure.Features
 
         private void CreateCustomer_Load(object sender, EventArgs e)
         {
-            this.buttonCreateCustomer.Enabled = false;
+            this.buttonCreateCustomer.Enabled = false; 
             loadCountries();
             loadProvinces();
 

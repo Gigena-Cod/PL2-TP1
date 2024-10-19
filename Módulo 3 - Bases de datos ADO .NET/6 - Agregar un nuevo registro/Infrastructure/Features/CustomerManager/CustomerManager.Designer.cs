@@ -34,11 +34,6 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            visualizarLosClienteToolStripMenuItem = new ToolStripMenuItem();
-            buscarClienteToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
-            dToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +67,7 @@
             // 
             // clientesToolStripMenuItem
             // 
-            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem, toolStripSeparator1, visualizarLosClienteToolStripMenuItem, buscarClienteToolStripMenuItem, toolStripSeparator2, dToolStripMenuItem });
+            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.Size = new Size(61, 20);
             clientesToolStripMenuItem.Text = "Clientes";
@@ -80,37 +75,9 @@
             // crearToolStripMenuItem
             // 
             crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(184, 22);
+            crearToolStripMenuItem.Size = new Size(180, 22);
             crearToolStripMenuItem.Text = "Agregar cliente";
             crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(181, 6);
-            // 
-            // visualizarLosClienteToolStripMenuItem
-            // 
-            visualizarLosClienteToolStripMenuItem.Name = "visualizarLosClienteToolStripMenuItem";
-            visualizarLosClienteToolStripMenuItem.Size = new Size(184, 22);
-            visualizarLosClienteToolStripMenuItem.Text = "Visualizar los clientes";
-            // 
-            // buscarClienteToolStripMenuItem
-            // 
-            buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            buscarClienteToolStripMenuItem.Size = new Size(184, 22);
-            buscarClienteToolStripMenuItem.Text = "Buscar cliente";
-            // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(181, 6);
-            // 
-            // dToolStripMenuItem
-            // 
-            dToolStripMenuItem.Name = "dToolStripMenuItem";
-            dToolStripMenuItem.Size = new Size(184, 22);
-            dToolStripMenuItem.Text = "Eliminar cliente";
             // 
             // CustomerManager
             // 
@@ -137,10 +104,5 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem;
-        private ToolStripMenuItem dToolStripMenuItem;
-        private ToolStripMenuItem visualizarLosClienteToolStripMenuItem;
-        private ToolStripMenuItem buscarClienteToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripSeparator toolStripSeparator2;
     }
 }

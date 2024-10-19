@@ -73,7 +73,7 @@
             textBoxName.Location = new Point(15, 130);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(234, 23);
-            textBoxName.TabIndex = 2;
+            textBoxName.TabIndex = 1;
             textBoxName.TextChanged += textBox1_TextChanged;
             // 
             // textBoxLastName
@@ -81,7 +81,7 @@
             textBoxLastName.Location = new Point(261, 130);
             textBoxLastName.Name = "textBoxLastName";
             textBoxLastName.Size = new Size(234, 23);
-            textBoxLastName.TabIndex = 3;
+            textBoxLastName.TabIndex = 2;
             textBoxLastName.TextChanged += textBoxLastName_TextChanged;
             // 
             // label3
@@ -107,7 +107,7 @@
             textBoxAddress.Location = new Point(12, 329);
             textBoxAddress.Name = "textBoxAddress";
             textBoxAddress.Size = new Size(237, 23);
-            textBoxAddress.TabIndex = 6;
+            textBoxAddress.TabIndex = 4;
             textBoxAddress.TextChanged += textBoxAddress_TextChanged;
             // 
             // label5
@@ -162,7 +162,7 @@
             textBoxLimitCredit.Location = new Point(15, 226);
             textBoxLimitCredit.Name = "textBoxLimitCredit";
             textBoxLimitCredit.Size = new Size(234, 23);
-            textBoxLimitCredit.TabIndex = 15;
+            textBoxLimitCredit.TabIndex = 3;
             textBoxLimitCredit.TextChanged += textBoxLimitCredit_TextChanged;
             // 
             // label10
@@ -189,7 +189,7 @@
             buttonCreateCustomer.Location = new Point(261, 447);
             buttonCreateCustomer.Name = "buttonCreateCustomer";
             buttonCreateCustomer.Size = new Size(89, 30);
-            buttonCreateCustomer.TabIndex = 18;
+            buttonCreateCustomer.TabIndex = 8;
             buttonCreateCustomer.Text = "Agregar";
             buttonCreateCustomer.UseVisualStyleBackColor = true;
             buttonCreateCustomer.Click += buttonCreateCustomer_Click;
@@ -199,7 +199,7 @@
             buttonCancel.Location = new Point(160, 447);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(89, 30);
-            buttonCancel.TabIndex = 19;
+            buttonCancel.TabIndex = 10;
             buttonCancel.Text = "Cancelar";
             buttonCancel.UseVisualStyleBackColor = true;
             buttonCancel.Click += buttonCancel_Click;
@@ -211,7 +211,7 @@
             comboBoxCountry.Location = new Point(261, 391);
             comboBoxCountry.Name = "comboBoxCountry";
             comboBoxCountry.Size = new Size(234, 23);
-            comboBoxCountry.TabIndex = 20;
+            comboBoxCountry.TabIndex = 7;
             comboBoxCountry.SelectedIndexChanged += comboBoxCountry_SelectedIndexChanged;
             // 
             // textBoxCity
@@ -219,7 +219,7 @@
             textBoxCity.Location = new Point(261, 329);
             textBoxCity.Name = "textBoxCity";
             textBoxCity.Size = new Size(234, 23);
-            textBoxCity.TabIndex = 8;
+            textBoxCity.TabIndex = 5;
             textBoxCity.TextChanged += textBoxCity_TextChanged;
             // 
             // comboBoxProvince
@@ -229,7 +229,7 @@
             comboBoxProvince.Location = new Point(15, 391);
             comboBoxProvince.Name = "comboBoxProvince";
             comboBoxProvince.Size = new Size(234, 23);
-            comboBoxProvince.TabIndex = 21;
+            comboBoxProvince.TabIndex = 6;
             comboBoxProvince.SelectedIndexChanged += comboBoxProvince_SelectedIndexChanged;
             // 
             // CreateCustomer

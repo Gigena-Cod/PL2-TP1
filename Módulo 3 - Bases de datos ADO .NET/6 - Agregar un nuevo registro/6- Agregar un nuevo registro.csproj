@@ -11,8 +11,11 @@
 
   <ItemGroup>
     <Folder Include="Domain\Models\" />
-    <Folder Include="Domain\Repository\" />
     <Folder Include="Infrastructure\Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.OleDb" Version="8.0.1" />
   </ItemGroup>
 
 </Project>
