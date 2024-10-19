@@ -10,8 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Infrastructure\Features\CreateCustomer\" />
+    <Folder Include="Domain\Models\" />
+    <Folder Include="Domain\Repository\" />
+    <Folder Include="Domain\Services\" />
     <Folder Include="Infrastructure\Utils\" />
   </ItemGroup>
 
