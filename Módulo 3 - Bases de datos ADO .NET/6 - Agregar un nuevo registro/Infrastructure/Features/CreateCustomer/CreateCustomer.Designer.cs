@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateCustomer));
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxName = new TextBox();
+            textBoxLastName = new TextBox();
             label3 = new Label();
             label4 = new Label();
             textBoxAddress = new TextBox();
@@ -41,7 +41,7 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            textBox7 = new TextBox();
+            textBoxLimitCredit = new TextBox();
             label10 = new Label();
             label11 = new Label();
             buttonCreateCustomer = new Button();
@@ -68,19 +68,21 @@
             label2.TabIndex = 1;
             label2.Text = "Nombre";
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Location = new Point(15, 130);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(234, 23);
-            textBox1.TabIndex = 2;
+            textBoxName.Location = new Point(15, 130);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(234, 23);
+            textBoxName.TabIndex = 2;
+            textBoxName.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // textBoxLastName
             // 
-            textBox2.Location = new Point(261, 130);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(234, 23);
-            textBox2.TabIndex = 3;
+            textBoxLastName.Location = new Point(261, 130);
+            textBoxLastName.Name = "textBoxLastName";
+            textBoxLastName.Size = new Size(234, 23);
+            textBoxLastName.TabIndex = 3;
+            textBoxLastName.TextChanged += textBoxLastName_TextChanged;
             // 
             // label3
             // 
@@ -106,6 +108,7 @@
             textBoxAddress.Name = "textBoxAddress";
             textBoxAddress.Size = new Size(237, 23);
             textBoxAddress.TabIndex = 6;
+            textBoxAddress.TextChanged += textBoxAddress_TextChanged;
             // 
             // label5
             // 
@@ -154,12 +157,13 @@
             label9.TabIndex = 14;
             label9.Text = "Informacion ";
             // 
-            // textBox7
+            // textBoxLimitCredit
             // 
-            textBox7.Location = new Point(15, 226);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(234, 23);
-            textBox7.TabIndex = 15;
+            textBoxLimitCredit.Location = new Point(15, 226);
+            textBoxLimitCredit.Name = "textBoxLimitCredit";
+            textBoxLimitCredit.Size = new Size(234, 23);
+            textBoxLimitCredit.TabIndex = 15;
+            textBoxLimitCredit.TextChanged += textBoxLimitCredit_TextChanged;
             // 
             // label10
             // 
@@ -208,6 +212,7 @@
             comboBoxCountry.Name = "comboBoxCountry";
             comboBoxCountry.Size = new Size(234, 23);
             comboBoxCountry.TabIndex = 20;
+            comboBoxCountry.SelectedIndexChanged += comboBoxCountry_SelectedIndexChanged;
             // 
             // textBoxCity
             // 
@@ -215,6 +220,7 @@
             textBoxCity.Name = "textBoxCity";
             textBoxCity.Size = new Size(234, 23);
             textBoxCity.TabIndex = 8;
+            textBoxCity.TextChanged += textBoxCity_TextChanged;
             // 
             // comboBoxProvince
             // 
@@ -224,6 +230,7 @@
             comboBoxProvince.Name = "comboBoxProvince";
             comboBoxProvince.Size = new Size(234, 23);
             comboBoxProvince.TabIndex = 21;
+            comboBoxProvince.SelectedIndexChanged += comboBoxProvince_SelectedIndexChanged;
             // 
             // CreateCustomer
             // 
@@ -236,7 +243,7 @@
             Controls.Add(buttonCreateCustomer);
             Controls.Add(label11);
             Controls.Add(label10);
-            Controls.Add(textBox7);
+            Controls.Add(textBoxLimitCredit);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -246,11 +253,12 @@
             Controls.Add(textBoxAddress);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxLastName);
+            Controls.Add(textBoxName);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "CreateCustomer";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Crear cliente";
             Load += CreateCustomer_Load;
             ResumeLayout(false);
@@ -261,8 +269,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxName;
+        private TextBox textBoxLastName;
         private Label label3;
         private Label label4;
         private TextBox textBoxAddress;
@@ -271,7 +279,7 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private TextBox textBox7;
+        private TextBox textBoxLimitCredit;
         private Label label10;
         private Label label11;
         private Button buttonCreateCustomer;

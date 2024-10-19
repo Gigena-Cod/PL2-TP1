@@ -19,8 +19,9 @@
 
         private void CreateCustomer_Load(object sender, EventArgs e)
         {
+            this.buttonCreateCustomer.Enabled = false;
             loadCountries();
-            loadProvinces();         
+            loadProvinces();
 
         }
 
@@ -48,6 +49,65 @@
             this.comboBoxProvince.Items.Clear();
             this.comboBoxProvince.Items.AddRange(provinces);
             this.comboBoxProvince.SelectedIndex = 0;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            validateFields();
+        }
+
+        private void textBoxLastName_TextChanged(object sender, EventArgs e)
+        {
+            validateFields();
+        }
+
+        private void textBoxLimitCredit_TextChanged(object sender, EventArgs e)
+        {
+            validateFields();
+        }
+
+        private void textBoxAddress_TextChanged(object sender, EventArgs e)
+        {
+            validateFields();
+        }
+
+        private void textBoxCity_TextChanged(object sender, EventArgs e)
+        {
+
+            validateFields();
+
+        }
+
+        private void comboBoxProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validateFields();
+        }
+
+        private void comboBoxCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validateFields();
+        }
+
+        /// <summary>
+        /// Valida los campos de entrada del formulario de cliente. 
+        /// Verifica que los campos de nombre, apellido, límite de crédito, dirección, provincia y país no estén vacíos.
+        /// Si algún campo no es válido, el botón de creación de cliente se desactiva.
+        /// </summary> 
+        private void validateFields()
+        {
+            if (this.textBoxLastName.Text == "" ||
+                this.textBoxName.Text == "" ||
+                !int.TryParse(this.textBoxLimitCredit.Text, out int limitCredit) ||
+                this.textBoxAddress.Text == "" ||
+                this.comboBoxProvince.SelectedIndex == -1 ||
+                this.comboBoxCountry.SelectedIndex == -1
+               )
+            {
+                this.buttonCreateCustomer.Enabled = false;
+                return;
+            }
+
+            this.buttonCreateCustomer.Enabled = true;
         }
     }
 }
