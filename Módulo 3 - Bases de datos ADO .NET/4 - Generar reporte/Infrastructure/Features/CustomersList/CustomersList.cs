@@ -39,21 +39,38 @@ namespace Infrastructure.Features
 
         private void buttonGenerateReport_Click(object sender, EventArgs e)
         {
-            StreamWriter streamWriter = new("Reporte.csv", false);
-            streamWriter.WriteLine("Reporte - 2024");
-            streamWriter.WriteLine("");
-
-            streamWriter.WriteLine("Id;Name;LastName;Email;Debt");
-
-             
             ResponseGetAllCustomers responseGetAllCustomers = customerServices.GetAllUsers();
 
-            streamWriter.WriteLine($"Cantidad de Usuarios;{responseGetAllCustomers.TotalCustomer}");
+           
 
-            streamWriter.WriteLine($"Deuda total;{responseGetAllCustomers.TotalDebts}");
-            streamWriter.WriteLine($"Promedio de deuda;{responseGetAllCustomers.AverageDebts}");
+          
+        }
 
-            MessageBox.Show("Reporte generado con exito","Reporte",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        private void GenerateReport(List<Customer> customers,string totalDebts, string totalCustomer, string averageDebts)
+        {
+            using (StreamWriter streamWriter = new("Reporte.csv", false))
+            {
+                streamWriter.WriteLine("Reporte - 2024");
+                streamWriter.WriteLine("");
+                streamWriter.WriteLine($"Cantidad de Usuarios;{totalCustomer}");
+                streamWriter.WriteLine("");
+                streamWriter.WriteLine("Id;Name;LastName;Email;Debt");
+
+
+                foreach (Customer customer in customers)
+                {
+                    streamWriter.WriteLine($"{customer.Id};{customer.Name};{customer.LastName};{customer.Email};{customer.Debt}");
+
+                }
+
+
+                streamWriter.WriteLine("");
+
+                streamWriter.WriteLine($"Deuda total;{totalDebts}");
+                streamWriter.WriteLine($"Promedio de deuda;{averageDebts}");
+
+                MessageBox.Show("Reporte generado con exito", "Reporte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
