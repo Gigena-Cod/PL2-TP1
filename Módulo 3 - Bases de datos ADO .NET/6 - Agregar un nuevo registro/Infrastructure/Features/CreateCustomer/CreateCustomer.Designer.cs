@@ -1,4 +1,4 @@
-﻿namespace _6__Agregar_un_nuevo_registro.Infrastructure.Features.CreateCustomer
+﻿namespace Infrastructure.Features
 {
     partial class CreateCustomer
     {
@@ -44,8 +44,8 @@
             textBox7 = new TextBox();
             label10 = new Label();
             label11 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            buttonCreateCustomer = new Button();
+            buttonCancel = new Button();
             comboBox1 = new ComboBox();
             textBox4 = new TextBox();
             comboBox2 = new ComboBox();
@@ -180,23 +180,25 @@
             label11.TabIndex = 17;
             label11.Text = "Crediticia";
             // 
-            // button1
+            // buttonCreateCustomer
             // 
-            button1.Location = new Point(261, 447);
-            button1.Name = "button1";
-            button1.Size = new Size(89, 30);
-            button1.TabIndex = 18;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            buttonCreateCustomer.Location = new Point(261, 447);
+            buttonCreateCustomer.Name = "buttonCreateCustomer";
+            buttonCreateCustomer.Size = new Size(89, 30);
+            buttonCreateCustomer.TabIndex = 18;
+            buttonCreateCustomer.Text = "Agregar";
+            buttonCreateCustomer.UseVisualStyleBackColor = true;
+            buttonCreateCustomer.Click += buttonCreateCustomer_Click;
             // 
-            // button2
+            // buttonCancel
             // 
-            button2.Location = new Point(160, 447);
-            button2.Name = "button2";
-            button2.Size = new Size(89, 30);
-            button2.TabIndex = 19;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            buttonCancel.Location = new Point(160, 447);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(89, 30);
+            buttonCancel.TabIndex = 19;
+            buttonCancel.Text = "Cancelar";
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // comboBox1
             // 
@@ -228,8 +230,8 @@
             ClientSize = new Size(507, 489);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(buttonCancel);
+            Controls.Add(buttonCreateCustomer);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(textBox7);
@@ -269,8 +271,8 @@
         private TextBox textBox7;
         private Label label10;
         private Label label11;
-        private Button button1;
-        private Button button2;
+        private Button buttonCreateCustomer;
+        private Button buttonCancel;
         private ComboBox comboBox1;
         private TextBox textBox4;
         private ComboBox comboBox2;

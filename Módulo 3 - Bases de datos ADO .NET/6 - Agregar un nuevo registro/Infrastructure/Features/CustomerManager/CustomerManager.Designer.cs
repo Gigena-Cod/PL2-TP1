@@ -1,4 +1,4 @@
-﻿namespace _6__Agregar_un_nuevo_registro
+﻿namespace Infrastructure.Features
 {
     partial class CustomerManager
     {
@@ -34,11 +34,11 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
-            dToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
             visualizarLosClienteToolStripMenuItem = new ToolStripMenuItem();
             buscarClienteToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
             toolStripSeparator2 = new ToolStripSeparator();
+            dToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(126, 22);
             salirToolStripMenuItem.Text = "Salir";
             // 
             // clientesToolStripMenuItem
@@ -80,14 +80,14 @@
             // crearToolStripMenuItem
             // 
             crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(180, 22);
+            crearToolStripMenuItem.Size = new Size(184, 22);
             crearToolStripMenuItem.Text = "Agregar cliente";
+            crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
             // 
-            // dToolStripMenuItem
+            // toolStripSeparator1
             // 
-            dToolStripMenuItem.Name = "dToolStripMenuItem";
-            dToolStripMenuItem.Size = new Size(180, 22);
-            dToolStripMenuItem.Text = "Eliminar cliente";
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(181, 6);
             // 
             // visualizarLosClienteToolStripMenuItem
             // 
@@ -101,26 +101,28 @@
             buscarClienteToolStripMenuItem.Size = new Size(184, 22);
             buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(181, 6);
-            // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(181, 6);
             // 
-            // Form1
+            // dToolStripMenuItem
+            // 
+            dToolStripMenuItem.Name = "dToolStripMenuItem";
+            dToolStripMenuItem.Size = new Size(184, 22);
+            dToolStripMenuItem.Text = "Eliminar cliente";
+            // 
+            // CustomerManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "CustomerManager";
             Text = "Administrador de clientes";
             WindowState = FormWindowState.Maximized;
+            Load += CustomerManager_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
