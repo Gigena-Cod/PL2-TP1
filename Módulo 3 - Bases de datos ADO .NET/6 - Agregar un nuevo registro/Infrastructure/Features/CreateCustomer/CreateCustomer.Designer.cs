@@ -35,7 +35,7 @@
             textBox2 = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            textBox3 = new TextBox();
+            textBoxAddress = new TextBox();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -46,9 +46,9 @@
             label11 = new Label();
             buttonCreateCustomer = new Button();
             buttonCancel = new Button();
-            comboBox1 = new ComboBox();
-            textBox4 = new TextBox();
-            comboBox2 = new ComboBox();
+            comboBoxCountry = new ComboBox();
+            textBoxCity = new TextBox();
+            comboBoxProvince = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -100,12 +100,12 @@
             label4.TabIndex = 5;
             label4.Text = "Direccion";
             // 
-            // textBox3
+            // textBoxAddress
             // 
-            textBox3.Location = new Point(12, 329);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(237, 23);
-            textBox3.TabIndex = 6;
+            textBoxAddress.Location = new Point(12, 329);
+            textBoxAddress.Name = "textBoxAddress";
+            textBoxAddress.Size = new Size(237, 23);
+            textBoxAddress.TabIndex = 6;
             // 
             // label5
             // 
@@ -200,36 +200,38 @@
             buttonCancel.UseVisualStyleBackColor = true;
             buttonCancel.Click += buttonCancel_Click;
             // 
-            // comboBox1
+            // comboBoxCountry
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(261, 391);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(234, 23);
-            comboBox1.TabIndex = 20;
+            comboBoxCountry.Enabled = false;
+            comboBoxCountry.FormattingEnabled = true;
+            comboBoxCountry.Location = new Point(261, 391);
+            comboBoxCountry.Name = "comboBoxCountry";
+            comboBoxCountry.Size = new Size(234, 23);
+            comboBoxCountry.TabIndex = 20;
             // 
-            // textBox4
+            // textBoxCity
             // 
-            textBox4.Location = new Point(261, 329);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(234, 23);
-            textBox4.TabIndex = 8;
+            textBoxCity.Location = new Point(261, 329);
+            textBoxCity.Name = "textBoxCity";
+            textBoxCity.Size = new Size(234, 23);
+            textBoxCity.TabIndex = 8;
             // 
-            // comboBox2
+            // comboBoxProvince
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(15, 391);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(234, 23);
-            comboBox2.TabIndex = 21;
+            comboBoxProvince.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxProvince.FormattingEnabled = true;
+            comboBoxProvince.Location = new Point(15, 391);
+            comboBoxProvince.Name = "comboBoxProvince";
+            comboBoxProvince.Size = new Size(234, 23);
+            comboBoxProvince.TabIndex = 21;
             // 
             // CreateCustomer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(507, 489);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxProvince);
+            Controls.Add(comboBoxCountry);
             Controls.Add(buttonCancel);
             Controls.Add(buttonCreateCustomer);
             Controls.Add(label11);
@@ -239,9 +241,9 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(textBoxCity);
             Controls.Add(label5);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxAddress);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -250,6 +252,7 @@
             Controls.Add(label1);
             Name = "CreateCustomer";
             Text = "Crear cliente";
+            Load += CreateCustomer_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -262,7 +265,7 @@
         private TextBox textBox2;
         private Label label3;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox textBoxAddress;
         private Label label5;
         private Label label6;
         private Label label7;
@@ -273,8 +276,8 @@
         private Label label11;
         private Button buttonCreateCustomer;
         private Button buttonCancel;
-        private ComboBox comboBox1;
-        private TextBox textBox4;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxCountry;
+        private TextBox textBoxCity;
+        private ComboBox comboBoxProvince;
     }
 }
