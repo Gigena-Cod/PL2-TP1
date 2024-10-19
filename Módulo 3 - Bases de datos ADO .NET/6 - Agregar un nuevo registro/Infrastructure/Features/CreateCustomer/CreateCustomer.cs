@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Features
+﻿using Domain.Services;
+
+namespace Infrastructure.Features
 {
     public partial class CreateCustomer : Form
     {
@@ -8,8 +10,31 @@
         }
 
         private void buttonCreateCustomer_Click(object sender, EventArgs e)
-        {
-            //TODO: Create customer
+        { 
+            CustomerService customerService = new();
+
+            bool response = customerService.CreateCustomer(this.textBoxName.Text, 
+                this.textBoxLastName.Text, 
+                this.textBoxLimitCredit.Text,
+                this.textBoxAddress.Text, 
+                this.textBoxCity.Text,
+                this.comboBoxProvince.Text,
+                this.comboBoxCountry.Text); 
+
+            if (!response) {
+                MessageBox.Show("Ocurrio un error al crear el usuario", "Error al crear el usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            MessageBox.Show("Usuario creado correctamente", "Usuario creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            this.textBoxName.Text=string.Empty;
+            this.textBoxLastName.Text = string.Empty;
+            this.textBoxLimitCredit.Text = string.Empty;
+            this.textBoxAddress.Text = string.Empty;
+            this.textBoxCity.Text = string.Empty;
+            this.comboBoxProvince.SelectedIndex = 0; 
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
