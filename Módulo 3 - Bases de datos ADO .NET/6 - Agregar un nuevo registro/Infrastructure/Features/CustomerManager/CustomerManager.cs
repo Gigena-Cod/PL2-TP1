@@ -15,7 +15,6 @@ namespace Infrastructure.Features
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateCustomer createCustomer = new CreateCustomer();
-
             createCustomer.ShowDialog();
 
         }
@@ -24,6 +23,12 @@ namespace Infrastructure.Features
         {
             FindCustomer findCustomer = new FindCustomer();
             findCustomer.ShowDialog();
+        }
+
+        private void visuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewCustomers viewCustomers = new ViewCustomers();
+            viewCustomers.ShowDialog();
         }
     }
 }

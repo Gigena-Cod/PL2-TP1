@@ -78,20 +78,21 @@
             // crearToolStripMenuItem
             // 
             crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(180, 22);
+            crearToolStripMenuItem.Size = new Size(184, 22);
             crearToolStripMenuItem.Text = "Agregar cliente";
             crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(181, 6);
             // 
             // visuToolStripMenuItem
             // 
             visuToolStripMenuItem.Name = "visuToolStripMenuItem";
             visuToolStripMenuItem.Size = new Size(184, 22);
             visuToolStripMenuItem.Text = "Visualizar los clientes";
+            visuToolStripMenuItem.Click += visuToolStripMenuItem_Click;
             // 
             // buscarClienteToolStripMenuItem
             // 
