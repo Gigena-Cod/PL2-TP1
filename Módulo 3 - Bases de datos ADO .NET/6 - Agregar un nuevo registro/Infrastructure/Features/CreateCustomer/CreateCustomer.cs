@@ -13,13 +13,10 @@ namespace Infrastructure.Features
         { 
             CustomerService customerService = new();
 
-            bool response = customerService.CreateCustomer(this.textBoxName.Text, 
-                this.textBoxLastName.Text, 
+            bool response = customerService.CreateCustomer(this.textBoxName.Text,
+                this.textBoxLastName.Text,
                 this.textBoxLimitCredit.Text,
-                this.textBoxAddress.Text, 
-                this.textBoxCity.Text,
-                this.comboBoxProvince.Text,
-                this.comboBoxCountry.Text); 
+                this.comboBoxProvince.Text);
 
             if (!response) {
                 MessageBox.Show("Ocurrio un error al crear el usuario", "Error al crear el usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -31,9 +28,7 @@ namespace Infrastructure.Features
             
             this.textBoxName.Text=string.Empty;
             this.textBoxLastName.Text = string.Empty;
-            this.textBoxLimitCredit.Text = string.Empty;
-            this.textBoxAddress.Text = string.Empty;
-            this.textBoxCity.Text = string.Empty;
+            this.textBoxLimitCredit.Text = string.Empty; 
             this.comboBoxProvince.SelectedIndex = 0; 
         }
 
@@ -45,21 +40,11 @@ namespace Infrastructure.Features
         private void CreateCustomer_Load(object sender, EventArgs e)
         {
             this.buttonCreateCustomer.Enabled = false; 
-            loadCountries();
+          
             loadProvinces();
 
         }
-
-
-        private void loadCountries()
-        {
-            string[] countries = { "Argentina" };
-
-            this.comboBoxCountry.Items.Clear();
-            this.comboBoxCountry.Items.AddRange(countries);
-            this.comboBoxCountry.SelectedIndex = 0;
-
-        }
+     
 
         private void loadProvinces()
         {
@@ -122,10 +107,8 @@ namespace Infrastructure.Features
         {
             if (this.textBoxLastName.Text == "" ||
                 this.textBoxName.Text == "" ||
-                !int.TryParse(this.textBoxLimitCredit.Text, out int limitCredit) ||
-                this.textBoxAddress.Text == "" ||
-                this.comboBoxProvince.SelectedIndex == -1 ||
-                this.comboBoxCountry.SelectedIndex == -1
+                !int.TryParse(this.textBoxLimitCredit.Text, out int limitCredit) || 
+                this.comboBoxProvince.SelectedIndex == -1  
                )
             {
                 this.buttonCreateCustomer.Enabled = false;

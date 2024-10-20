@@ -1,4 +1,5 @@
 ﻿using Domain;
+using System.Diagnostics;
 
 namespace Domain.Services
 {
@@ -7,13 +8,18 @@ namespace Domain.Services
         private Repository repository = new Repository(); // Instancia de Repository
 
 
-
-        public bool CreateCustomer(string name, string lastName, string limitCredit, string address, string city, string province, string country)
+        /// <summary>
+        /// Inserta un nuevo cliente en la tabla Customers.
+        /// </summary>
+        /// <param name="name">El nombre del cliente.</param>
+        /// <param name="lastName">El apellido del cliente.</param>
+        /// <param name="limitCredit">El límite de crédito del cliente.</param>
+        /// <param name="provinceId">La provincia del cliente.</param>
+        /// <returns>True si la inserción fue exitosa, de lo contrario false.</returns>
+        public bool CreateCustomer(string name, string lastName, string limitCredit,string provinceId)
         {
-            // Construir la consulta de inserción con parámetros
-            string query = "INSERT INTO [Customers] (name, lastName, limitCredit, address, city, province, country) " +
-                           $"VALUES ('{name}', '{lastName}', '{limitCredit}', '{address}', '{city}', '{province}', '{country}')";
-
+            string query = "INSERT INTO [Customers] (name, lastName, limitCredit, debts, province) " +
+                           $"VALUES ('{name}', '{lastName}', '{limitCredit}','{0}', '{provinceId}')";
 
             List<List<object>>? response = repository.ExecuteQuery(query);
 
@@ -21,6 +27,7 @@ namespace Domain.Services
             {
                 return false;
             }
+
             return true;
         }
     }
