@@ -19,5 +19,11 @@ namespace Infrastructure.Features
             createCustomer.ShowDialog();
 
         }
+
+        private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindCustomer findCustomer = new FindCustomer();
+            findCustomer.ShowDialog();
+        }
     }
 }

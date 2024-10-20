@@ -34,6 +34,9 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            visuToolStripMenuItem = new ToolStripMenuItem();
+            buscarClienteToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +70,7 @@
             // 
             // clientesToolStripMenuItem
             // 
-            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem });
+            clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem, toolStripSeparator1, visuToolStripMenuItem, buscarClienteToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.Size = new Size(61, 20);
             clientesToolStripMenuItem.Text = "Clientes";
@@ -78,6 +81,24 @@
             crearToolStripMenuItem.Size = new Size(180, 22);
             crearToolStripMenuItem.Text = "Agregar cliente";
             crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
+            // 
+            // visuToolStripMenuItem
+            // 
+            visuToolStripMenuItem.Name = "visuToolStripMenuItem";
+            visuToolStripMenuItem.Size = new Size(184, 22);
+            visuToolStripMenuItem.Text = "Visualizar los clientes";
+            // 
+            // buscarClienteToolStripMenuItem
+            // 
+            buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
+            buscarClienteToolStripMenuItem.Size = new Size(184, 22);
+            buscarClienteToolStripMenuItem.Text = "Buscar cliente";
+            buscarClienteToolStripMenuItem.Click += buscarClienteToolStripMenuItem_Click;
             // 
             // CustomerManager
             // 
@@ -104,5 +125,8 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem visuToolStripMenuItem;
+        private ToolStripMenuItem buscarClienteToolStripMenuItem;
     }
 }
