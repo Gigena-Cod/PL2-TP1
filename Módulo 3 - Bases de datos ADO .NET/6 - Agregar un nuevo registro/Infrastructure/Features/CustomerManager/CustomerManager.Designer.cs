@@ -59,14 +59,16 @@
             // acervToolStripMenuItem
             // 
             acervToolStripMenuItem.Name = "acervToolStripMenuItem";
-            acervToolStripMenuItem.Size = new Size(126, 22);
+            acervToolStripMenuItem.Size = new Size(180, 22);
             acervToolStripMenuItem.Text = "Acerca de";
+            acervToolStripMenuItem.Click += acervToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(126, 22);
+            salirToolStripMenuItem.Size = new Size(180, 22);
             salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 

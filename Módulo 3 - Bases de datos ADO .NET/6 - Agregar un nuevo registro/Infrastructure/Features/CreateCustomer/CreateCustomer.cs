@@ -1,4 +1,5 @@
 ﻿using Domain.Services;
+using Infrastructure.Utils;
 
 namespace Infrastructure.Features
 {
@@ -10,26 +11,29 @@ namespace Infrastructure.Features
         }
 
         private void buttonCreateCustomer_Click(object sender, EventArgs e)
-        { 
+        {
             CustomerService customerService = new();
+
+            int selectedProvince = this.comboBoxProvince.SelectedIndex + 1;
 
             bool response = customerService.CreateCustomer(this.textBoxName.Text,
                 this.textBoxLastName.Text,
                 this.textBoxLimitCredit.Text,
-                this.comboBoxProvince.Text);
+                selectedProvince);
 
-            if (!response) {
+            if (!response)
+            {
                 MessageBox.Show("Ocurrio un error al crear el usuario", "Error al crear el usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
 
             MessageBox.Show("Usuario creado correctamente", "Usuario creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            this.textBoxName.Text=string.Empty;
+
+            this.textBoxName.Text = string.Empty;
             this.textBoxLastName.Text = string.Empty;
-            this.textBoxLimitCredit.Text = string.Empty; 
-            this.comboBoxProvince.SelectedIndex = 0; 
+            this.textBoxLimitCredit.Text = string.Empty;
+            this.comboBoxProvince.SelectedIndex = 0;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -39,25 +43,17 @@ namespace Infrastructure.Features
 
         private void CreateCustomer_Load(object sender, EventArgs e)
         {
-            this.buttonCreateCustomer.Enabled = false; 
-          
+            this.buttonCreateCustomer.Enabled = false;
+
             loadProvinces();
 
         }
-     
+
 
         private void loadProvinces()
         {
-            string[] provinces = {
-                "Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes",
-                "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza",
-                "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis",
-                "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego",
-                "Tucumán"
-            };
-
             this.comboBoxProvince.Items.Clear();
-            this.comboBoxProvince.Items.AddRange(provinces);
+            this.comboBoxProvince.Items.AddRange(Constants.PROVINCES);
             this.comboBoxProvince.SelectedIndex = 0;
         }
 
@@ -107,8 +103,8 @@ namespace Infrastructure.Features
         {
             if (this.textBoxLastName.Text == "" ||
                 this.textBoxName.Text == "" ||
-                !int.TryParse(this.textBoxLimitCredit.Text, out int limitCredit) || 
-                this.comboBoxProvince.SelectedIndex == -1  
+                !int.TryParse(this.textBoxLimitCredit.Text, out int limitCredit) ||
+                this.comboBoxProvince.SelectedIndex == -1
                )
             {
                 this.buttonCreateCustomer.Enabled = false;

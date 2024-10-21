@@ -30,5 +30,16 @@ namespace Infrastructure.Features
             ViewCustomers viewCustomers = new ViewCustomers();
             viewCustomers.ShowDialog();
         }
+
+        private void acervToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutMe aboutMe = new AboutMe();
+            aboutMe.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -30,16 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindCustomer));
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
+            textBoxCustomerId = new TextBox();
+            textBoxName = new TextBox();
+            textBoxLastName = new TextBox();
+            textBoxLimitCredt = new TextBox();
+            comboBoxProvince = new ComboBox();
             buttonFindCustomer = new Button();
             label3 = new Label();
             buttonUpdateCustomer = new Button();
             buttonDeleteCustome = new Button();
-            buttonClose = new Button();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -55,41 +54,46 @@
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
             // 
-            // textBox1
+            // textBoxCustomerId
             // 
-            textBox1.Location = new Point(9, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 23);
-            textBox1.TabIndex = 2;
+            textBoxCustomerId.Location = new Point(9, 33);
+            textBoxCustomerId.Name = "textBoxCustomerId";
+            textBoxCustomerId.Size = new Size(185, 23);
+            textBoxCustomerId.TabIndex = 2;
+            textBoxCustomerId.TextChanged += textBoxCustomerId_TextChanged;
             // 
-            // textBox2
+            // textBoxName
             // 
-            textBox2.Location = new Point(24, 203);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(183, 23);
-            textBox2.TabIndex = 3;
+            textBoxName.Enabled = false;
+            textBoxName.Location = new Point(24, 203);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(183, 23);
+            textBoxName.TabIndex = 3;
             // 
-            // textBox3
+            // textBoxLastName
             // 
-            textBox3.Location = new Point(236, 203);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(190, 23);
-            textBox3.TabIndex = 4;
+            textBoxLastName.Enabled = false;
+            textBoxLastName.Location = new Point(236, 203);
+            textBoxLastName.Name = "textBoxLastName";
+            textBoxLastName.Size = new Size(190, 23);
+            textBoxLastName.TabIndex = 4;
             // 
-            // textBox4
+            // textBoxLimitCredt
             // 
-            textBox4.Location = new Point(22, 267);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(185, 23);
-            textBox4.TabIndex = 5;
+            textBoxLimitCredt.Enabled = false;
+            textBoxLimitCredt.Location = new Point(22, 267);
+            textBoxLimitCredt.Name = "textBoxLimitCredt";
+            textBoxLimitCredt.Size = new Size(185, 23);
+            textBoxLimitCredt.TabIndex = 5;
             // 
-            // comboBox1
+            // comboBoxProvince
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(236, 267);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(190, 23);
-            comboBox1.TabIndex = 6;
+            comboBoxProvince.Enabled = false;
+            comboBoxProvince.FormattingEnabled = true;
+            comboBoxProvince.Location = new Point(236, 267);
+            comboBoxProvince.Name = "comboBoxProvince";
+            comboBoxProvince.Size = new Size(190, 23);
+            comboBoxProvince.TabIndex = 6;
             // 
             // buttonFindCustomer
             // 
@@ -99,6 +103,7 @@
             buttonFindCustomer.TabIndex = 7;
             buttonFindCustomer.Text = "Buscar";
             buttonFindCustomer.UseVisualStyleBackColor = true;
+            buttonFindCustomer.Click += buttonFindCustomer_Click;
             // 
             // label3
             // 
@@ -117,6 +122,7 @@
             buttonUpdateCustomer.TabIndex = 9;
             buttonUpdateCustomer.Text = "Modificar";
             buttonUpdateCustomer.UseVisualStyleBackColor = true;
+            buttonUpdateCustomer.Click += buttonUpdateCustomer_Click;
             // 
             // buttonDeleteCustome
             // 
@@ -126,15 +132,7 @@
             buttonDeleteCustome.TabIndex = 10;
             buttonDeleteCustome.Text = "Eliminar";
             buttonDeleteCustome.UseVisualStyleBackColor = true;
-            // 
-            // buttonClose
-            // 
-            buttonClose.Location = new Point(24, 325);
-            buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(115, 30);
-            buttonClose.TabIndex = 11;
-            buttonClose.Text = "Cancelar";
-            buttonClose.UseVisualStyleBackColor = true;
+            buttonDeleteCustome.Click += buttonDeleteCustome_Click;
             // 
             // label4
             // 
@@ -165,7 +163,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxCustomerId);
             groupBox1.Controls.Add(buttonFindCustomer);
             groupBox1.Location = new Point(15, 89);
             groupBox1.Name = "groupBox1";
@@ -183,14 +181,13 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(buttonClose);
             Controls.Add(buttonDeleteCustome);
             Controls.Add(buttonUpdateCustomer);
             Controls.Add(label3);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(comboBoxProvince);
+            Controls.Add(textBoxLimitCredt);
+            Controls.Add(textBoxLastName);
+            Controls.Add(textBoxName);
             Controls.Add(label1);
             Name = "FindCustomer";
             StartPosition = FormStartPosition.CenterScreen;
@@ -205,16 +202,15 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
+        private TextBox textBoxCustomerId;
+        private TextBox textBoxName;
+        private TextBox textBoxLastName;
+        private TextBox textBoxLimitCredt;
+        private ComboBox comboBoxProvince;
         private Button buttonFindCustomer;
         private Label label3;
         private Button buttonUpdateCustomer;
         private Button buttonDeleteCustome;
-        private Button buttonClose;
         private Label label4;
         private Label label5;
         private Label label6;

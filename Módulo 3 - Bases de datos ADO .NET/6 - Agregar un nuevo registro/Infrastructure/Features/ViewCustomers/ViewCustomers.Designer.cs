@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCustomers));
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridViewCustomers = new DataGridView();
+            ColumnId = new DataGridViewTextBoxColumn();
             ColumnName = new DataGridViewTextBoxColumn();
             ColumnLastName = new DataGridViewTextBoxColumn();
             ColumnDebts = new DataGridViewTextBoxColumn();
@@ -38,8 +39,7 @@
             ColumnProvince = new DataGridViewTextBoxColumn();
             buttonGenerateReport = new Button();
             labelCountCustomers = new Label();
-            buttonClose = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCustomers).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -50,14 +50,19 @@
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
             // 
-            // dataGridView1
+            // dataGridViewCustomers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnName, ColumnLastName, ColumnDebts, ColumnLimitCredits, ColumnProvince });
-            dataGridView1.Location = new Point(12, 132);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(588, 261);
-            dataGridView1.TabIndex = 1;
+            dataGridViewCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCustomers.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnName, ColumnLastName, ColumnDebts, ColumnLimitCredits, ColumnProvince });
+            dataGridViewCustomers.Location = new Point(12, 132);
+            dataGridViewCustomers.Name = "dataGridViewCustomers";
+            dataGridViewCustomers.Size = new Size(588, 306);
+            dataGridViewCustomers.TabIndex = 1;
+            // 
+            // ColumnId
+            // 
+            ColumnId.HeaderText = "Id";
+            ColumnId.Name = "ColumnId";
             // 
             // ColumnName
             // 
@@ -97,6 +102,7 @@
             buttonGenerateReport.TabIndex = 2;
             buttonGenerateReport.Text = "Generar reporte";
             buttonGenerateReport.UseVisualStyleBackColor = true;
+            buttonGenerateReport.Click += buttonGenerateReport_Click;
             // 
             // labelCountCustomers
             // 
@@ -107,30 +113,20 @@
             labelCountCustomers.TabIndex = 3;
             labelCountCustomers.Text = "label2";
             // 
-            // buttonClose
-            // 
-            buttonClose.Location = new Point(12, 408);
-            buttonClose.Name = "buttonClose";
-            buttonClose.Size = new Size(115, 30);
-            buttonClose.TabIndex = 4;
-            buttonClose.Text = "Cancelar";
-            buttonClose.UseVisualStyleBackColor = true;
-            // 
             // ViewCustomers
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 450);
-            Controls.Add(buttonClose);
             Controls.Add(labelCountCustomers);
             Controls.Add(buttonGenerateReport);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewCustomers);
             Controls.Add(label1);
             Name = "ViewCustomers";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Clientes";
             Load += ViewCustomers_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,14 +134,14 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewCustomers;
+        private Button buttonGenerateReport;
+        private Label labelCountCustomers;
+        private DataGridViewTextBoxColumn ColumnId;
         private DataGridViewTextBoxColumn ColumnName;
         private DataGridViewTextBoxColumn ColumnLastName;
         private DataGridViewTextBoxColumn ColumnDebts;
         private DataGridViewTextBoxColumn ColumnLimitCredits;
         private DataGridViewTextBoxColumn ColumnProvince;
-        private Button buttonGenerateReport;
-        private Label labelCountCustomers;
-        private Button buttonClose;
     }
 }
