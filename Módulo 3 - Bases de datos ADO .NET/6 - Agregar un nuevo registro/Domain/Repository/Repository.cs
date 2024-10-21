@@ -64,7 +64,7 @@ namespace Domain
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -75,5 +75,36 @@ namespace Domain
 
         }
 
+
+        public int ExecuteNonQuery(string query, params OleDbParameter[] parameters)
+        {
+            try
+            {
+                OpenConnection();
+
+                using (OleDbCommand oleDbCommand = new OleDbCommand(query, connection))
+                {
+                    oleDbCommand.CommandType = System.Data.CommandType.Text;
+
+                    // Añadir los parámetros si hay
+                    if (parameters != null)
+                    {
+                        oleDbCommand.Parameters.AddRange(parameters);
+                    }
+
+                    return oleDbCommand.ExecuteNonQuery(); // Retorna el número de filas afectadas
+                }
+            }
+            catch (Exception ex) // Captura la excepción
+            {
+                // Podrías registrar el error aquí
+                Console.WriteLine($"Error: {ex.Message}");
+                return 0; // Retorna 0 en caso de error
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
     }
 }
